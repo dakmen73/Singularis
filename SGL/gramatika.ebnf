@@ -1,0 +1,40 @@
+stylesheet    := { statement | comment }
+
+statement     := rule | at_rule | declaration
+
+rule          := selector block
+selector      := path_selector | file_selector
+path_selector := "/" { path_segment } "/"
+path_segment  := NAME | "${" expr "}"
+file_selector := "file" string block
+
+declaration   := IDENT ":" value ";"
+value         := string | number | boolean | array | object | "null" | interpolated_string
+interpolated_string := QUOTED_STRING_WITH_INTERPOLATION
+
+at_rule       := if_rule | foreach_rule | exec_rule | mixin_decl | mixin_include | root_rule
+if_rule       := "@if" "(" expr ")" block [ "@else" block? ]
+foreach_rule  := "@foreach" IDENT "in" expr block
+exec_rule     := "@exec" block
+mixin_decl    := "@mixin" IDENT [ "(" [ param_list ] ")" ] block
+mixin_include := "@include" IDENT [ "(" [ arg_list ] ")" ] ";"
+root_rule     := ":root" block
+
+param_list    := IDENT { "," IDENT }
+arg_list      := expr { "," expr }
+
+block         := "{" { statement } "}"
+
+/* Výrazy - rozšířené o string concatenation a member access */
+expr          := log_or
+log_or        := log_and { "||" log_and }
+log_and       := equality { "&&" equality }
+equality      := relational { ("==" | "!=") relational }
+relational    := additive { ("<" | "<=" | ">" | ">=") additive }
+additive      := multiplicative { ("+" | "-") multiplicative }
+multiplicative:= unary { ("*" | "/" | "%") unary }
+unary         := ("!" | "-") unary | primary
+primary       := NUMBER | string | boolean | "null" | var_func | array | object 
+               | member_access | "(" expr ")"
+var_func      := "var" "(" "--" IDENT ")"
+member_access := IDENT { "." IDENT }

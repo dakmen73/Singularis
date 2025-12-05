@@ -1,0 +1,6 @@
+@SVAS.WebApi_HostAddress = http://localhost:5048
+
+GET {{SVAS.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

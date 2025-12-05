@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ForgeCss.Cli</id>
+    <version>1.0.0</version>
+    <authors>ForgeCss.Cli</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="18ee0ba138b08c31b9fdf4e57f8eb0279c7165a3" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="ForgeCss.Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="ForgeCss.Parsing" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="9.0.10" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Hosting" version="9.0.10" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Console" version="9.0.10" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\GIST\SG\SGL\ForgeCss.Cli\bin\Release\net8.0\ForgeCss.Cli.runtimeconfig.json" target="lib\net8.0\ForgeCss.Cli.runtimeconfig.json" />
+    <file src="C:\GIST\SG\SGL\ForgeCss.Cli\bin\Release\net8.0\ForgeCss.Cli.dll" target="lib\net8.0\ForgeCss.Cli.dll" />
+  </files>
+</package>

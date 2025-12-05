@@ -1,0 +1,29 @@
+{
+  "profiles": {
+    "SolutionGenerator.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "--config solution.example.json --output ./TestOutput",
+      "workingDirectory": "$(ProjectDir)..",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "SolutionGenerator.CLI (with schema)": {
+      "commandName": "Project",
+      "commandLineArgs": "--config solution.example.json --output ./TestOutput --schema solution.schema.json",
+      "workingDirectory": "$(ProjectDir)..",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "SolutionGenerator.CLI (custom config)": {
+      "commandName": "Project",
+      "commandLineArgs": "--config solution.example.json --output ./GeneratedSolution",
+      "workingDirectory": "$(ProjectDir)..",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+

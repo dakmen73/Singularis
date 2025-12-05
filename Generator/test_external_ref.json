@@ -1,0 +1,30 @@
+{
+  "solution": {
+    "name": "TestSolution",
+    "targetFramework": "net10.0",
+    "projects": [
+      {
+        "name": "TestProject",
+        "type": "library",
+        "dataModel": {
+          "type": "xpo",
+          "classes": [
+            {
+              "name": "TestClass",
+              "baseClass": "XPLiteObject",
+              "namespace": "TestNamespace",
+              "attributes": [
+                {
+                  "name": "TestProperty",
+                  "type": "string",
+                  "size": 100
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+

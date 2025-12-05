@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/solution-schema.json",
+  "title": ".NET Solution Generator Schema",
+  "description": "Schema pro konfiguraci generování kompletní .NET solution struktury",
+  "type": "object",
+  "required": [
+    "solution"
+  ],
+  "properties": {
+    "solution": {
+      "type": "object",
+      "required": [
+        "name",
+        "projects"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9._-]+$",
+          "description": "Název solution (bez přípony .slnx)"
+        },
+        "targetFramework": {
+          "type": "string",
+          "default": "net10.0",
+          "description": "Výchozí cílový framework pro všechny projekty"
+        },
+        "configurations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "default": [
+            "Debug",
+            "Release"
+          ],
+          "description": "Konfigurace buildu (Debug, Release, EasyTest, atd.)"
+        },
+        "centralPackageManagement": {
+          "type": "boolean",
+          "default": true,
+          "description": "Použít centralizovanou správu balíčků přes Directory.packages.props"
+        },
+        "centralPackageFloatingVersions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Povolit floating verze v centralizované správě balíčků"
+        },
+        "packages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/package"
+          },
+          "description": "Centralizované NuGet balíčky pro Directory.packages.props"
+        },
+        "projects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/project"
+          },
+          "description": "Seznam projektů v solution"
+        },
+        "folders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Volitelné složky pro organizaci projektů v solution"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9._-]+$",
+          "description": "Název projektu (bez přípony .csproj)"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "console",
+            "library",
+            "web",
+            "blazor",
+            "win",
+            "test"
+          ],
+          "description": "Typ projektu: console=Console App, library=Class Library, web=Web API, blazor=Blazor Server, win=Windows Forms, test=Test Project"
+        },
+        "targetFramework": {
+          "type": "string",
+          "description": "Cílový framework (přepisuje globální, např. net10.0, net10.0-windows)"
+        },
+        "folder": {
+          "type": "string",
+          "description": "Složka v solution exploreru (volitelné)"
+        },
+        "outputType": {
+          "type": "string",
+          "enum": [
+            "Exe",
+            "WinExe",
+            "Library"
+          ],
+          "description": "Typ výstupu (WinExe pro Windows Forms)"
+        },
+        "useWindowsForms": {
+          "type": "boolean",
+          "description": "Použít Windows Forms (pro win a test projekty)"
+        },
+        "checkEolTargetFramework": {
+          "type": "boolean",
+          "default": false,
+          "description": "Kontrolovat EOL target framework"
+        },
+        "deterministic": {
+          "type": "boolean",
+          "description": "Deterministic build"
+        },
+        "assemblyVersion": {
+          "type": "string",
+          "description": "Assembly version (např. 1.0.*)"
+        },
+        "fileVersion": {
+          "type": "string",
+          "description": "File version (např. 1.0.0.0)"
+        },
+        "implicitUsings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Povolit implicitní using direktivy"
+        },
+        "isPackable": {
+          "type": "boolean",
+          "description": "Zda je projekt balitelný jako NuGet balíček"
+        },
+        "applicationIcon": {
+          "type": "string",
+          "description": "Cesta k ikoně aplikace"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Názvy projektů, na které tento projekt závisí (ProjectReference)"
+        },
+        "nugetPackages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "NuGet balíčky specifické pro tento projekt (pokud není centralizovaná správa)"
+        },
+        "usingAliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/usingAlias"
+          },
+          "description": "Using direktivy s aliasy"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/projectFile"
+          },
+          "description": "Vlastní soubory projektu"
+        },
+        "embeddedResources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Cesty k souborům jako embedded resources"
+        },
+        "contentFiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentFile"
+          },
+          "description": "Content soubory s možností kopírování do výstupu"
+        },
+        "folders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Složky v projektu (BusinessObjects, Controllers, API, atd.)"
+        },
+        "dataModel": {
+          "$ref": "#/$defs/dataModel",
+          "description": "XPO datový model pro tento projekt (volitelné)"
+        }
+      }
+    },
+    "projectFile": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Relativní cesta k souboru v projektu"
+        },
+        "template": {
+          "type": "string",
+          "enum": [
+            "console-program",
+            "web-program",
+            "blazor-program",
+            "win-program",
+            "module-class",
+            "controller",
+            "business-object",
+            "custom"
+          ],
+          "description": "Název šablony pro generování obsahu"
+        },
+        "content": {
+          "type": "string",
+          "description": "Vlastní obsah souboru (přepisuje template)"
+        },
+        "namespace": {
+          "type": "string",
+          "description": "Namespace pro generovaný soubor"
+        }
+      }
+    },
+    "contentFile": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Cesta k content souboru"
+        },
+        "copyToOutput": {
+          "type": "string",
+          "enum": [
+            "Never",
+            "Always",
+            "PreserveNewest"
+          ],
+          "default": "Never",
+          "description": "Kdy kopírovat do výstupu"
+        }
+      }
+    },
+    "usingAlias": {
+      "type": "object",
+      "required": [
+        "namespace",
+        "alias"
+      ],
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "description": "Namespace pro alias"
+        },
+        "alias": {
+          "type": "string",
+          "description": "Název aliasu"
+        }
+      }
+    },
+    "package": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID NuGet balíčku (např. DevExpress.ExpressApp)"
+        },
+        "version": {
+          "type": "string",
+          "description": "Verze balíčku (podporuje wildcards jako 25.1.* nebo přesné verze jako 1.13.1)"
+        }
+      }
+    },
+    "dataModel": {
+      "$ref": "https://example.com/xpo-diagram.schema.json#",
+      "description": "XPO datový model pro projekt - odkazuje na externí xpo_schema.json pomocí $id"
+    }
+  }
+}

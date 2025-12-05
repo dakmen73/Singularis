@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="solution.example.json" />
+    <File Path="solution.schema.json" />
+  </Folder>
+  <Project Path="SolutionGenerator.CLI/SolutionGenerator.CLI.csproj" />
+  <Project Path="SolutionGenerator.Core/SolutionGenerator.Core.csproj" />
+  <Project Path="XpoExtractor.CLI/XpoExtractor.CLI.csproj" />
+  <Project Path="XpoExtractor/XpoExtractor.csproj" />
+</Solution>
+

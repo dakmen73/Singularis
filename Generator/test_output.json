@@ -1,0 +1,865 @@
+{
+  "type": "xpo",
+  "classes": [
+    {
+      "name": "CAP",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_CAP",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DestovaStanice",
+      "namespace": "GA.INF.BO",
+      "baseClass": "GA.INF.BO.INF_Bod",
+      "implementedInterfaces": [],
+      "persistent": "pis_DestovaStanice",
+      "imageName": "GA_tank-water",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "GetWebPage",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_CAP",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_CAP",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_GIS",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_GIS",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_HP",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_HP",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_PISObject",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_PISObject",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "GeneralLimit",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [
+        "INotifiableObject"
+      ],
+      "persistent": "pis_GeneralLimit",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "GisLimit",
+      "namespace": "",
+      "baseClass": null,
+      "implementedInterfaces": [],
+      "persistent": null,
+      "imageName": null,
+      "nonPersistent": true,
+      "attributes": [],
+      "collections": [],
+      "methods": [],
+      "customAttributes": []
+    },
+    {
+      "name": "HlasnyProfil",
+      "namespace": "GA.INF.BO",
+      "baseClass": "GA.INF.BO.INF_Bod",
+      "implementedInterfaces": [
+        "IDiagramItem"
+      ],
+      "persistent": "pis_HlasnyProfil",
+      "imageName": "GA_ruler-vertical_water",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "GetTooltip",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "ToString",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "GetWebPage",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "Limit",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_GeneralLimit",
+      "implementedInterfaces": [],
+      "persistent": "pis_Limit",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "LimitNonSPA",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_Limit",
+      "implementedInterfaces": [],
+      "persistent": "pis_LimitNonSPA",
+      "imageName": "GA_ruler-vertical_square-s_square-p",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "LimitNonSPA1",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_Limit",
+      "implementedInterfaces": [],
+      "persistent": "pis_LimitNonSPA1",
+      "imageName": "GA_ruler-vertical_water-arrow-up",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "OnSaving",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "LimitSPA",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_Limit",
+      "implementedInterfaces": [],
+      "persistent": "pis_LimitSPA",
+      "imageName": "GA_ruler-vertical_parking-slash",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "NotifikaceLimitu",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_NotifikaceLimitu",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "OnDeleting",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "NotifikaceLimituZadost",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [
+        "INotifiableObject"
+      ],
+      "persistent": "pis_NotifikaceLimituZadost",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "Objekt",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_Objekt",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetDS",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetDS",
+      "imageName": "GA_cloud-showers_gauge-circle-plus",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetVS",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetVS",
+      "imageName": "GA_ruler-vertical_gauge-circle-plus",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetVS_his",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetVS_his",
+      "imageName": "GA_reply-clock",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetVS_sim",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetVS_sim",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "PISObject",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.Core.BO.GAObject",
+      "implementedInterfaces": [],
+      "persistent": null,
+      "imageName": null,
+      "nonPersistent": true,
+      "attributes": [],
+      "collections": [],
+      "methods": [],
+      "customAttributes": []
+    },
+    {
+      "name": "ProcessStates",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "vw_pis_ProcessStates",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "Reka",
+      "namespace": "GA.INF.BO",
+      "baseClass": "GA.INF.BO.INF_Linie",
+      "implementedInterfaces": [],
+      "persistent": "pis_Reka",
+      "imageName": "GA_water",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "RuleSetDetail",
+      "namespace": "",
+      "baseClass": null,
+      "implementedInterfaces": [],
+      "persistent": null,
+      "imageName": null,
+      "nonPersistent": true,
+      "attributes": [],
+      "collections": [],
+      "methods": [],
+      "customAttributes": []
+    },
+    {
+      "name": "Simulace",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_Simulace",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "OnChanged",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": [
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "oldValue",
+              "type": "object"
+            },
+            {
+              "name": "newValue",
+              "type": "object"
+            }
+          ]
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "TopStavy",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_TopStavy",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "TypObjektu",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_TypObjektu",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "VlastnostObjektu",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_VlastnostObjektu",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "VObject",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_VObject",
+      "imageName": "house-water",
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "inheritance",
+      "from": "CAP",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "DestovaStanice",
+      "to": "GA.INF.BO.INF_Bod"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_CAP",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_GIS",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_HP",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_PISObject",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "GeneralLimit",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "HlasnyProfil",
+      "to": "GA.INF.BO.INF_Bod"
+    },
+    {
+      "type": "inheritance",
+      "from": "Limit",
+      "to": "GA.PIS.BO.PIS_GeneralLimit"
+    },
+    {
+      "type": "inheritance",
+      "from": "LimitNonSPA",
+      "to": "GA.PIS.BO.PIS_Limit"
+    },
+    {
+      "type": "inheritance",
+      "from": "LimitNonSPA1",
+      "to": "GA.PIS.BO.PIS_Limit"
+    },
+    {
+      "type": "inheritance",
+      "from": "LimitSPA",
+      "to": "GA.PIS.BO.PIS_Limit"
+    },
+    {
+      "type": "inheritance",
+      "from": "NotifikaceLimitu",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "NotifikaceLimituZadost",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "Objekt",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetDS",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetVS",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetVS_his",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetVS_sim",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "PISObject",
+      "to": "GA.Core.BO.GAObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "ProcessStates",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "Reka",
+      "to": "GA.INF.BO.INF_Linie"
+    },
+    {
+      "type": "inheritance",
+      "from": "Simulace",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "TopStavy",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "TypObjektu",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "VlastnostObjektu",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "VObject",
+      "to": "GA.PIS.BO.PISObject"
+    }
+  ],
+  "notes": [],
+  "externalTypes": []
+}

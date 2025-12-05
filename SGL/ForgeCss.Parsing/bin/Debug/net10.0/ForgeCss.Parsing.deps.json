@@ -1,0 +1,71 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "ForgeCss.Parsing/1.0.0": {
+        "dependencies": {
+          "ForgeCss.Core": "1.0.0",
+          "Pidgin": "3.5.1",
+          "Scriban": "6.5.0"
+        },
+        "runtime": {
+          "ForgeCss.Parsing.dll": {}
+        }
+      },
+      "Pidgin/3.5.1": {
+        "runtime": {
+          "lib/net7.0/Pidgin.dll": {
+            "assemblyVersion": "3.5.1.0",
+            "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "Scriban/6.5.0": {
+        "runtime": {
+          "lib/net7.0/Scriban.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.5.0.0"
+          }
+        }
+      },
+      "ForgeCss.Core/1.0.0": {
+        "runtime": {
+          "ForgeCss.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ForgeCss.Parsing/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Pidgin/3.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zU7tkXlF3D6d2GLTjJDomAL3nnl4AwfZvSgSz8D4b+Ry21/clqedYlxBnEAkAU/bkGfEv6uRR7QCdWZUpKrB/g==",
+      "path": "pidgin/3.5.1",
+      "hashPath": "pidgin.3.5.1.nupkg.sha512"
+    },
+    "Scriban/6.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GEdtPvMZk8ilKGnwq3yL/aC+frhu4HKnD0btpb84BiFZQLGUgdtxXG0oMIHf0lRJboMQDwopvQO+jARcvXWd8g==",
+      "path": "scriban/6.5.0",
+      "hashPath": "scriban.6.5.0.nupkg.sha512"
+    },
+    "ForgeCss.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

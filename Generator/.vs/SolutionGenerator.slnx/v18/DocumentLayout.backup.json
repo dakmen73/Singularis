@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GIST\\SG\\Generator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|Solution Items{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|C:\\GIST\\SG\\Generator\\solution.schema.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|Solution Items{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|solutionrelative:solution.schema.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|Solution Items{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|C:\\GIST\\SG\\Generator\\solution.example.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|Solution Items{0E2DE252-460A-4CC8-AFF5-B55C339F22A8}|solutionrelative:solution.example.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77C8EDA3-F35D-8922-E204-5AF2038FF6ED}|SolutionGenerator.CLI\\SolutionGenerator.CLI.csproj|c:\\gist\\sg\\generator\\solutiongenerator.cli\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{77C8EDA3-F35D-8922-E204-5AF2038FF6ED}|SolutionGenerator.CLI\\SolutionGenerator.CLI.csproj|solutionrelative:solutiongenerator.cli\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F71A21A4-2C36-758B-9E0A-76C8977BDA40}|SolutionGenerator.Core\\SolutionGenerator.Core.csproj|c:\\gist\\sg\\generator\\solutiongenerator.core\\solutiongenerator.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F71A21A4-2C36-758B-9E0A-76C8977BDA40}|SolutionGenerator.Core\\SolutionGenerator.Core.csproj|solutionrelative:solutiongenerator.core\\solutiongenerator.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F71A21A4-2C36-758B-9E0A-76C8977BDA40}|SolutionGenerator.Core\\SolutionGenerator.Core.csproj|c:\\gist\\sg\\generator\\solutiongenerator.core\\solutiongeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F71A21A4-2C36-758B-9E0A-76C8977BDA40}|SolutionGenerator.Core\\SolutionGenerator.Core.csproj|solutionrelative:solutiongenerator.core\\solutiongeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1027,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "solution.schema.json",
+              "DocumentMoniker": "C:\\GIST\\SG\\Generator\\solution.schema.json",
+              "RelativeDocumentMoniker": "solution.schema.json",
+              "ToolTip": "C:\\GIST\\SG\\Generator\\solution.schema.json",
+              "RelativeToolTip": "solution.schema.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-13T11:51:32.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "solution.example.json",
+              "DocumentMoniker": "C:\\GIST\\SG\\Generator\\solution.example.json",
+              "RelativeDocumentMoniker": "solution.example.json",
+              "ToolTip": "C:\\GIST\\SG\\Generator\\solution.example.json",
+              "RelativeToolTip": "solution.example.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-13T11:51:16.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\GIST\\SG\\Generator\\SolutionGenerator.CLI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SolutionGenerator.CLI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\GIST\\SG\\Generator\\SolutionGenerator.CLI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SolutionGenerator.CLI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-13T11:35:48.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SolutionGenerator.Core.csproj",
+              "DocumentMoniker": "C:\\GIST\\SG\\Generator\\SolutionGenerator.Core\\SolutionGenerator.Core.csproj",
+              "RelativeDocumentMoniker": "SolutionGenerator.Core\\SolutionGenerator.Core.csproj",
+              "ToolTip": "C:\\GIST\\SG\\Generator\\SolutionGenerator.Core\\SolutionGenerator.Core.csproj",
+              "RelativeToolTip": "SolutionGenerator.Core\\SolutionGenerator.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-13T11:34:23.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SolutionGeneratorService.cs",
+              "DocumentMoniker": "C:\\GIST\\SG\\Generator\\SolutionGenerator.Core\\SolutionGeneratorService.cs",
+              "RelativeDocumentMoniker": "SolutionGenerator.Core\\SolutionGeneratorService.cs",
+              "ToolTip": "C:\\GIST\\SG\\Generator\\SolutionGenerator.Core\\SolutionGeneratorService.cs",
+              "RelativeToolTip": "SolutionGenerator.Core\\SolutionGeneratorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T10:51:32.385Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 747,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="DevExpress.ExpressApp.ListView" Alias="ListView" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp" />
+    <PackageReference Include="DevExpress.ExpressApp.Chart.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" />
+    <PackageReference Include="DevExpress.ExpressApp.Dashboards.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Office.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.PivotChart.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.PivotGrid.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" />
+    <PackageReference Include="DevExpress.ExpressApp.TreeListEditors.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Win.Design" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" />
+    <PackageReference Include="DevExpress.Persistent.Base" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" />
+    <PackageReference Include="DevExpress.RichEdit.Export" />
+    <PackageReference Include="DevExpress.Win.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SVAS.Module\SVAS.Module.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images/Logo.svg" />
+    <EmbeddedResource Include="Images/ExpressAppLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model.xafml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

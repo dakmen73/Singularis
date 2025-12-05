@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="SVAS.Blazor.Server/SVAS.Blazor.Server.csproj" />
+  <Project Path="SVAS.E2E.Tests/SVAS.E2E.Tests.csproj" />
+  <Project Path="SVAS.Module/SVAS.Module.csproj" />
+  <Project Path="SVAS.WebApi/SVAS.WebApi.csproj" />
+  <Project Path="SVAS.Win/SVAS.Win.csproj" />
+</Solution>

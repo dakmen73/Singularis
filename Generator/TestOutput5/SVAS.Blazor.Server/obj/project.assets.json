@@ -1,0 +1,176 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net6.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\kminek\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 25.1\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\GIST\\SG\\Generator\\TestOutput5\\SVAS.Blazor.Server\\SVAS.Blazor.Server.csproj",
+      "projectName": "SVAS.Blazor.Server",
+      "projectPath": "C:\\GIST\\SG\\Generator\\TestOutput5\\SVAS.Blazor.Server\\SVAS.Blazor.Server.csproj",
+      "packagesPath": "C:\\Users\\kminek\\.nuget\\packages\\",
+      "outputPath": "C:\\GIST\\SG\\Generator\\TestOutput5\\SVAS.Blazor.Server\\obj\\",
+      "projectStyle": "PackageReference",
+      "centralPackageVersionsManagementEnabled": true,
+      "centralPackageFloatingVersionsEnabled": true,
+      "fallbackFolders": [
+        "C:\\Program Files\\DevExpress 25.1\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\kminek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 25.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\DevExpress 25.1\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/1eC5RrveLFUDPrFsnwxZEjBmxSdAxu6v43APbeXB5gLrcz9Snj/api/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "centralPackageVersions": {
+          "Azure.Identity": "1.13.1",
+          "coverlet.collector": "6.0.2",
+          "DevExpress.Drawing.Skia": "25.1.*",
+          "DevExpress.ExpressApp": "25.1.*",
+          "DevExpress.ExpressApp.Api.Xpo.All": "25.1.*",
+          "DevExpress.ExpressApp.AuditTrail.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Chart": "25.1.*",
+          "DevExpress.ExpressApp.Chart.Win": "25.1.*",
+          "DevExpress.ExpressApp.CloneObject": "25.1.*",
+          "DevExpress.ExpressApp.CodeAnalysis": "25.1.*",
+          "DevExpress.ExpressApp.ConditionalAppearance": "25.1.*",
+          "DevExpress.ExpressApp.Dashboards": "25.1.*",
+          "DevExpress.ExpressApp.Dashboards.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Dashboards.Win": "25.1.*",
+          "DevExpress.ExpressApp.EasyTest.BlazorAdapter": "25.1.*",
+          "DevExpress.ExpressApp.EasyTest.WinAdapter": "25.1.*",
+          "DevExpress.ExpressApp.FileAttachment.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.FileAttachment.Win": "25.1.*",
+          "DevExpress.ExpressApp.Kpi": "25.1.*",
+          "DevExpress.ExpressApp.MultiTenancy.AspNetCore.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.MultiTenancy.Blazor.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.MultiTenancy.WebApi.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.MultiTenancy.Win.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.MultiTenancy.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.Notifications": "25.1.*",
+          "DevExpress.ExpressApp.Notifications.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Notifications.Win": "25.1.*",
+          "DevExpress.ExpressApp.Objects": "25.1.*",
+          "DevExpress.ExpressApp.Office": "25.1.*",
+          "DevExpress.ExpressApp.Office.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Office.Win": "25.1.*",
+          "DevExpress.ExpressApp.PivotChart": "25.1.*",
+          "DevExpress.ExpressApp.PivotChart.Win": "25.1.*",
+          "DevExpress.ExpressApp.PivotGrid": "25.1.*",
+          "DevExpress.ExpressApp.PivotGrid.Win": "25.1.*",
+          "DevExpress.ExpressApp.ReportsV2": "25.1.*",
+          "DevExpress.ExpressApp.ReportsV2.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.ReportsV2.Win": "25.1.*",
+          "DevExpress.ExpressApp.Scheduler": "25.1.*",
+          "DevExpress.ExpressApp.Scheduler.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Scheduler.Win": "25.1.*",
+          "DevExpress.ExpressApp.ScriptRecorder": "25.1.*",
+          "DevExpress.ExpressApp.ScriptRecorder.Win": "25.1.*",
+          "DevExpress.ExpressApp.Security": "25.1.*",
+          "DevExpress.ExpressApp.Security.AspNetCore.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.Security.Xpo": "25.1.*",
+          "DevExpress.ExpressApp.Security.Xpo.Extensions.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Security.Xpo.Extensions.Win": "25.1.*",
+          "DevExpress.ExpressApp.StateMachine": "25.1.*",
+          "DevExpress.ExpressApp.TreeListEditors": "25.1.*",
+          "DevExpress.ExpressApp.TreeListEditors.Win": "25.1.*",
+          "DevExpress.ExpressApp.Validation": "25.1.*",
+          "DevExpress.ExpressApp.Validation.Blazor": "25.1.*",
+          "DevExpress.ExpressApp.Validation.Win": "25.1.*",
+          "DevExpress.ExpressApp.ViewVariantsModule": "25.1.*",
+          "DevExpress.ExpressApp.Win": "25.1.*",
+          "DevExpress.ExpressApp.Win.Design": "25.1.*",
+          "DevExpress.ExpressApp.Workflow": "25.1.*",
+          "DevExpress.ExpressApp.Xpo": "25.1.*",
+          "DevExpress.Persistent.Base": "25.1.*",
+          "DevExpress.Persistent.BaseImpl.Xpo": "25.1.*",
+          "DevExpress.RichEdit.Export": "25.1.*",
+          "DevExpress.Win.Design": "25.1.*",
+          "Microsoft.AspNetCore.Authentication.Negotiate": "8.0.17",
+          "Microsoft.Data.SqlClient": "5.2.2",
+          "Microsoft.NET.Test.Sdk": "17.11.1",
+          "Selenium.Support": "4.4.0",
+          "Selenium.WebDriver": "4.4.0",
+          "Swashbuckle.AspNetCore": "6.9.0",
+          "Swashbuckle.AspNetCore.Annotations": "6.9.0",
+          "System.IdentityModel.Tokens.Jwt": "8.14.0",
+          "System.Net.Http": "4.3.4",
+          "System.Text.RegularExpressions": "4.3.1",
+          "xunit": "2.4.2",
+          "xunit.runner.visualstudio": "2.4.3"
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1507",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ve vaší konfiguraci jsou definovány 2 zdroje balíčků. Při použití centrální správy balíčků prosím namapujte zdroje balíčků pomocí mapování zdrojů balíčků (https://aka.ms/nuget-package-source-mapping) nebo zadejte jeden zdroj balíčku. Jsou definovány následující zdroje: nuget.org, Devexpress"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+c:\GIST\SG\SGL\ForgeCss.Core\bin\Debug\net10.0\ForgeCss.Core.deps.json
+c:\GIST\SG\SGL\ForgeCss.Core\bin\Debug\net10.0\ForgeCss.Core.dll
+c:\GIST\SG\SGL\ForgeCss.Core\bin\Debug\net10.0\ForgeCss.Core.pdb
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ForgeCss.Core.GeneratedMSBuildEditorConfig.editorconfig
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ForgeCss.Core.AssemblyInfoInputs.cache
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ForgeCss.Core.AssemblyInfo.cs
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ForgeCss.Core.csproj.CoreCompileInputs.cache
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ForgeCss.Core.dll
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\refint\ForgeCss.Core.dll
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ForgeCss.Core.pdb
+c:\GIST\SG\SGL\ForgeCss.Core\obj\Debug\net10.0\ref\ForgeCss.Core.dll

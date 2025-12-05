@@ -1,0 +1,45 @@
+:root {
+  --solution: "MyTestSolution";
+  --company: "TestCompany";
+  --projects: ["Core", "Web", "Tests"];
+}
+
+/* Test adresářů a souborů */
+/test-output/ {
+  create-dir: true;
+  
+  file "readme.txt" {
+    content: |
+      Solution: ${--solution}
+      Company: ${--company}
+      Generated at: ${System.DateTime.Now}
+    |
+    mode: "overwrite-if-changed";
+  }
+  
+  file "projects.json" {
+    content: |
+      {
+        "projects": [
+          @foreach p in var(--projects) {
+            "${p}"
+          } 
+        ]
+      }
+    |
+  }
+}
+
+/* Test příkazů */
+@exec { run: "echo 'This would create solution: ${--solution}'"; }
+
+/* Test podmínek */
+@if (true) {
+  /conditional-dir/ {
+    create-dir: true;
+    
+    file "conditional.txt" {
+      content: "This was created conditionally";
+    }
+  }
+}

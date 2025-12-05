@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GIST\\SG\\SGL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CCBF782-495E-4B95-ADE8-D84CEB7CE843}|ForgeCss.Cli\\ForgeCss.Cli.csproj|c:\\gist\\sg\\sgl\\forgecss.cli\\forgecss.cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6CCBF782-495E-4B95-ADE8-D84CEB7CE843}|ForgeCss.Cli\\ForgeCss.Cli.csproj|solutionrelative:forgecss.cli\\forgecss.cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8075A23F-86CC-4AD6-865D-AC522F4F0E77}|ForgeCss.Parsing\\ForgeCss.Parsing.csproj|c:\\gist\\sg\\sgl\\forgecss.parsing\\csslikeparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8075A23F-86CC-4AD6-865D-AC522F4F0E77}|ForgeCss.Parsing\\ForgeCss.Parsing.csproj|solutionrelative:forgecss.parsing\\csslikeparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8075A23F-86CC-4AD6-865D-AC522F4F0E77}|ForgeCss.Parsing\\ForgeCss.Parsing.csproj|c:\\gist\\sg\\sgl\\forgecss.parsing\\forgecss.parsing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8075A23F-86CC-4AD6-865D-AC522F4F0E77}|ForgeCss.Parsing\\ForgeCss.Parsing.csproj|solutionrelative:forgecss.parsing\\forgecss.parsing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CCBF782-495E-4B95-ADE8-D84CEB7CE843}|ForgeCss.Cli\\ForgeCss.Cli.csproj|c:\\gist\\sg\\sgl\\forgecss.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CCBF782-495E-4B95-ADE8-D84CEB7CE843}|ForgeCss.Cli\\ForgeCss.Cli.csproj|solutionrelative:forgecss.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF3B4BD-1B15-4C9E-B88A-112F07C87746}|ForgeCss.Core\\ForgeCss.Core.csproj|c:\\gist\\sg\\sgl\\forgecss.core\\forgecss.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4EF3B4BD-1B15-4C9E-B88A-112F07C87746}|ForgeCss.Core\\ForgeCss.Core.csproj|solutionrelative:forgecss.core\\forgecss.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\GIST\\SG\\SGL\\ForgeCss.Cli\\Program.cs",
+              "RelativeDocumentMoniker": "ForgeCss.Cli\\Program.cs",
+              "ToolTip": "C:\\GIST\\SG\\SGL\\ForgeCss.Cli\\Program.cs",
+              "RelativeToolTip": "ForgeCss.Cli\\Program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwEEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T12:49:14.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CssLikeParser.cs",
+              "DocumentMoniker": "C:\\GIST\\SG\\SGL\\ForgeCss.Parsing\\CssLikeParser.cs",
+              "RelativeDocumentMoniker": "ForgeCss.Parsing\\CssLikeParser.cs",
+              "ToolTip": "C:\\GIST\\SG\\SGL\\ForgeCss.Parsing\\CssLikeParser.cs",
+              "RelativeToolTip": "ForgeCss.Parsing\\CssLikeParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T12:46:00.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ForgeCss.Cli",
+              "DocumentMoniker": "C:\\GIST\\SG\\SGL\\ForgeCss.Cli\\ForgeCss.Cli.csproj",
+              "RelativeDocumentMoniker": "ForgeCss.Cli\\ForgeCss.Cli.csproj",
+              "ToolTip": "C:\\GIST\\SG\\SGL\\ForgeCss.Cli\\ForgeCss.Cli.csproj",
+              "RelativeToolTip": "ForgeCss.Cli\\ForgeCss.Cli.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-06T12:09:11.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ForgeCss.Parsing",
+              "DocumentMoniker": "C:\\GIST\\SG\\SGL\\ForgeCss.Parsing\\ForgeCss.Parsing.csproj",
+              "RelativeDocumentMoniker": "ForgeCss.Parsing\\ForgeCss.Parsing.csproj",
+              "ToolTip": "C:\\GIST\\SG\\SGL\\ForgeCss.Parsing\\ForgeCss.Parsing.csproj",
+              "RelativeToolTip": "ForgeCss.Parsing\\ForgeCss.Parsing.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-06T12:11:18.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForgeCss.Core",
+              "DocumentMoniker": "C:\\GIST\\SG\\SGL\\ForgeCss.Core\\ForgeCss.Core.csproj",
+              "RelativeDocumentMoniker": "ForgeCss.Core\\ForgeCss.Core.csproj",
+              "ToolTip": "C:\\GIST\\SG\\SGL\\ForgeCss.Core\\ForgeCss.Core.csproj",
+              "RelativeToolTip": "ForgeCss.Core\\ForgeCss.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-06T12:11:17.06Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

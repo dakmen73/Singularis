@@ -1,0 +1,12 @@
+C:\GIST\SG\SGL\ForgeCss.Parsing\bin\Release\net8.0\ForgeCss.Parsing.deps.json
+C:\GIST\SG\SGL\ForgeCss.Parsing\bin\Release\net8.0\ForgeCss.Parsing.dll
+C:\GIST\SG\SGL\ForgeCss.Parsing\bin\Release\net8.0\ForgeCss.Parsing.pdb
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.csproj.AssemblyReference.cache
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.AssemblyInfoInputs.cache
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.AssemblyInfo.cs
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.csproj.CoreCompileInputs.cache
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.dll
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\refint\ForgeCss.Parsing.dll
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ForgeCss.Parsing.pdb
+C:\GIST\SG\SGL\ForgeCss.Parsing\obj\Release\net8.0\ref\ForgeCss.Parsing.dll

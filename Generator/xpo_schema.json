@@ -1,0 +1,581 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/xpo-diagram.schema.json",
+  "title": "XPO Data Model Schema",
+  "description": "JSON Schema pro reprezentaci XPO (DevExpress eXpress Persistent Objects) datového modelu s podporou všech XPO schopností",
+  "type": "object",
+  "required": ["type", "classes"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "xpo",
+      "description": "Typ modelu - vždy 'xpo' pro XPO datový model"
+    },
+    "classes": {
+      "type": "array",
+      "description": "Seznam tříd v diagramu",
+      "items": {
+        "$ref": "#/$defs/class"
+      },
+      "minItems": 1
+    },
+    "relationships": {
+      "type": "array",
+      "description": "Seznam vztahů mezi třídami",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "array",
+      "description": "Poznámky k třídám",
+      "items": {
+        "$ref": "#/$defs/note"
+      },
+      "default": []
+    },
+    "externalTypes": {
+      "type": "array",
+      "description": "Externí typy z jiných namespace (odkazy na typy mimo tento model)",
+      "items": {
+        "$ref": "#/$defs/externalType"
+      },
+      "default": []
+    }
+  },
+  "$defs": {
+    "class": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název třídy",
+          "minLength": 1
+        },
+        "stereotype": {
+          "type": "string",
+          "enum": ["interface", "abstract", "enumeration", "service", "xpo", "xplite"],
+          "description": "Stereotyp třídy (xpo=XPObject, xplite=XPLiteObject)"
+        },
+        "baseClass": {
+          "type": "string",
+          "description": "Základní třída (XPLiteObject, XPObject, PersistentBase, atd.)",
+          "enum": ["XPLiteObject", "XPObject", "PersistentBase", "XPBaseObject", "Custom"]
+        },
+        "virtualBaseClass": {
+          "type": "string",
+          "description": "Virtuální základní třída (může se lišit od baseClass, např. GAObject vs. XPLiteObject)"
+        },
+        "implementedInterfaces": {
+          "type": "array",
+          "description": "Seznam implementovaných rozhraní (např. IDiagramItem, INotifiableObject)",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "namespace": {
+          "type": "string",
+          "description": "Namespace třídy"
+        },
+        "className": {
+          "type": "string",
+          "description": "Název třídy v kódu (může se lišit od name)"
+        },
+        "nonPersistent": {
+          "type": "boolean",
+          "default": false,
+          "description": "Zda je třída non-persistent (neukládá se do DB)"
+        },
+        "persistent": {
+          "type": "string",
+          "description": "Název tabulky/view v databázi (pokud se liší od názvu třídy, např. 'vw_GACAS_YM')"
+        },
+        "mapInheritance": {
+          "type": "string",
+          "enum": ["ParentTable", "ClassTable", "SingleTable"],
+          "description": "Strategie mapování dědičnosti (ParentTable = každá třída má vlastní tabulku)"
+        },
+        "virtualName": {
+          "type": "string",
+          "description": "Virtuální název třídy (pro generování)"
+        },
+        "initialName": {
+          "type": "string",
+          "description": "Původní název třídy před přejmenováním"
+        },
+        "userFileName": {
+          "type": "string",
+          "description": "Název souboru pro uživatele (např. 'Modul')"
+        },
+        "designerFileName": {
+          "type": "string",
+          "description": "Název designer souboru (např. 'Modul.Designer')"
+        },
+        "attributes": {
+          "type": "array",
+          "description": "Atributy (properties) třídy",
+          "items": {
+            "$ref": "#/$defs/attribute"
+          },
+          "default": []
+        },
+        "methods": {
+          "type": "array",
+          "description": "Metody třídy",
+          "items": {
+            "$ref": "#/$defs/method"
+          },
+          "default": []
+        },
+        "collections": {
+          "type": "array",
+          "description": "XPCollection vlastnosti (XPO kolekce)",
+          "items": {
+            "$ref": "#/$defs/collection"
+          },
+          "default": []
+        },
+        "annotations": {
+          "type": "array",
+          "description": "Anotace třídy",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "customAttributes": {
+          "type": "array",
+          "description": "Custom attributes třídy (DevExpress XAF atributy)",
+          "items": {
+            "$ref": "#/$defs/customAttribute"
+          },
+          "default": []
+        },
+        "indexes": {
+          "type": "array",
+          "description": "Databázové indexy na třídě",
+          "items": {
+            "$ref": "#/$defs/index"
+          },
+          "default": []
+        },
+        "validations": {
+          "type": "array",
+          "description": "Validační pravidla (DevExpress.Persistent.Validation)",
+          "items": {
+            "$ref": "#/$defs/validation"
+          },
+          "default": []
+        }
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název atributu",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "Datový typ atributu (String, int, boolean, DateTime, ...)",
+          "minLength": 1
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["public", "private", "protected", "package"],
+          "description": "Viditelnost: public (+), private (-), protected (#), package (~)",
+          "default": "private"
+        },
+        "isStatic": {
+          "type": "boolean",
+          "description": "Je statický atribut?",
+          "default": false
+        },
+        "isAbstract": {
+          "type": "boolean",
+          "description": "Je abstraktní?",
+          "default": false
+        },
+        "defaultValue": {
+          "type": "string",
+          "description": "Výchozí hodnota"
+        },
+        "persistent": {
+          "type": "boolean",
+          "default": true,
+          "description": "Zda je atribut perzistentní v databázi (XPO)"
+        },
+        "columnName": {
+          "type": "string",
+          "description": "Název sloupce v databázi (pokud se liší od názvu vlastnosti)"
+        },
+        "columnType": {
+          "type": "string",
+          "description": "Databázový typ sloupce (např. DateTime, String, Int32)"
+        },
+        "virtualColumnType": {
+          "type": "string",
+          "description": "Virtuální typ sloupce (pro mapování)"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Zobrazovaný název (DisplayName)"
+        },
+        "size": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "description": "Velikost pro string typy (např. [Size(100)])"
+            },
+            {
+              "type": "string",
+              "enum": ["Unlimited"],
+              "description": "Neomezená velikost (size=\"Unlimited\")"
+            }
+          ]
+        },
+        "isKey": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je primární klíč? (KeyProperty)"
+        },
+        "isIdentity": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je auto-increment pole? (isIdentity=\"true\")"
+        },
+        "isNullable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je pole nullovatelné? (isNullable=\"true\")"
+        },
+        "initialName": {
+          "type": "string",
+          "description": "Původní název pole před přejmenováním"
+        },
+        "delayedUpdateModifiedOnly": {
+          "type": "boolean",
+          "default": false,
+          "description": "Delayed update modified only (XPO)"
+        },
+        "index": {
+          "type": "integer",
+          "description": "Pořadí v indexu (Index(0), Index(1), ...)"
+        },
+        "customAttributes": {
+          "type": "array",
+          "description": "Custom attributes atributu (DevExpress XAF)",
+          "items": {
+            "$ref": "#/$defs/customAttribute"
+          },
+          "default": []
+        },
+        "validations": {
+          "type": "array",
+          "description": "Validační pravidla pro atribut",
+          "items": {
+            "$ref": "#/$defs/validation"
+          },
+          "default": []
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "required": ["name", "elementType"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název kolekce (XPCollection)",
+          "minLength": 1
+        },
+        "elementType": {
+          "type": "string",
+          "description": "Typ prvků v kolekci (název třídy)",
+          "minLength": 1
+        },
+        "associationName": {
+          "type": "string",
+          "description": "Název Association vztahu (např. 'DPKRefHP')"
+        },
+        "sourceCollectionName": {
+          "type": "string",
+          "description": "Název kolekce na zdrojové straně (např. 'c_GA_Moment')"
+        },
+        "targetFieldName": {
+          "type": "string",
+          "description": "Název pole na cílové straně (např. 'ParentID')"
+        },
+        "isAggregated": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je agregovaná kolekce? ([Aggregated])"
+        },
+        "index": {
+          "type": "integer",
+          "description": "Pořadí v indexu"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Zobrazovaný název"
+        },
+        "summary": {
+          "type": "string",
+          "description": "XML komentář/shrnutí"
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název metody",
+          "minLength": 1
+        },
+        "returnType": {
+          "type": "string",
+          "description": "Návratový typ metody",
+          "default": "void"
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["public", "private", "protected", "package"],
+          "description": "Viditelnost: public (+), private (-), protected (#), package (~)",
+          "default": "public"
+        },
+        "parameters": {
+          "type": "array",
+          "description": "Parametry metody",
+          "items": {
+            "$ref": "#/$defs/parameter"
+          },
+          "default": []
+        },
+        "isStatic": {
+          "type": "boolean",
+          "description": "Je statická metoda?",
+          "default": false
+        },
+        "isAbstract": {
+          "type": "boolean",
+          "description": "Je abstraktní?",
+          "default": false
+        }
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název parametru",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "Datový typ parametru",
+          "minLength": 1
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["type", "from", "to"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "inheritance",
+            "composition",
+            "aggregation",
+            "association",
+            "link",
+            "dependency",
+            "realization",
+            "xpo-association",
+            "xpo-aggregated"
+          ],
+          "description": "Typ vztahu mezi třídami (xpo-association, xpo-aggregated pro XPO specifické vztahy)"
+        },
+        "from": {
+          "type": "string",
+          "description": "Název zdrojové třídy",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "description": "Název cílové třídy",
+          "minLength": 1
+        },
+        "associationName": {
+          "type": "string",
+          "description": "Název Association vztahu (pro XPO, např. 'DPKRefHP')"
+        },
+        "sourceCollectionName": {
+          "type": "string",
+          "description": "Název kolekce na zdrojové straně (např. 'c_GA_Moment')"
+        },
+        "targetFieldName": {
+          "type": "string",
+          "description": "Název pole na cílové straně (např. 'ParentID')"
+        },
+        "label": {
+          "type": "string",
+          "description": "Popisek vztahu"
+        },
+        "fromMultiplicity": {
+          "type": "string",
+          "description": "Kardinalita na straně from (např. '1', '0..1', '0..*', '1..*')"
+        },
+        "toMultiplicity": {
+          "type": "string",
+          "description": "Kardinalita na straně to (např. '1', '0..1', '0..*', '1..*')"
+        },
+        "fromLabel": {
+          "type": "string",
+          "description": "Popisek role na straně from"
+        },
+        "toLabel": {
+          "type": "string",
+          "description": "Popisek role na straně to"
+        },
+        "isAggregated": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je agregovaný vztah? ([Aggregated])"
+        },
+        "index": {
+          "type": "integer",
+          "description": "Pořadí v indexu pro vztah"
+        }
+      }
+    },
+    "index": {
+      "type": "object",
+      "required": ["fields"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název indexu"
+        },
+        "fields": {
+          "type": "array",
+          "description": "Seznam polí v indexu",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "isUnique": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je index unikátní?"
+        },
+        "isComposite": {
+          "type": "boolean",
+          "default": false,
+          "description": "Je kompozitní index (více polí)?"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["rule"],
+      "properties": {
+        "rule": {
+          "type": "string",
+          "enum": [
+            "Required",
+            "RuleRequiredField",
+            "RuleStringLength",
+            "RuleRange",
+            "RuleValueComparison",
+            "RuleObjectExists",
+            "RuleUniqueValue",
+            "RuleFromBoolProperty",
+            "RuleCombinationOfPropertiesIsUnique",
+            "RuleRegularExpression",
+            "RuleIsReferenced",
+            "RuleCriteria",
+            "Custom"
+          ],
+          "description": "Typ validačního pravidla (DevExpress.Persistent.Validation)"
+        },
+        "target": {
+          "type": "string",
+          "enum": ["class", "property", "method"],
+          "description": "Cíl validace"
+        },
+        "targetName": {
+          "type": "string",
+          "description": "Název cíle (property name, method name, nebo null pro třídu)"
+        },
+        "message": {
+          "type": "string",
+          "description": "Chybová zpráva"
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Parametry validačního pravidla (závisí na typu pravidla)"
+        }
+      }
+    },
+    "customAttribute": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Typ atributu (např. 'DevExpress.ExpressApp.Model.ModelDefault', 'DevExpress.Persistent.Base.VisibleInDetailView')"
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Parametry atributu jako key-value párů",
+          "additionalProperties": true
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "required": ["text", "className"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text poznámky",
+          "minLength": 1
+        },
+        "className": {
+          "type": "string",
+          "description": "Název třídy, ke které se poznámka vztahuje",
+          "minLength": 1
+        }
+      }
+    },
+    "externalType": {
+      "type": "object",
+      "required": ["name", "namespace"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název externího typu",
+          "minLength": 1
+        },
+        "namespace": {
+          "type": "string",
+          "description": "Namespace externího typu",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
+

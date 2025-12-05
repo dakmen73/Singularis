@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZX5TeprUuLo=",
+  "success": true,
+  "projectFilePath": "C:\\GIST\\SG\\Generator\\SolutionGenerator.Core\\SolutionGenerator.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kminek\\.nuget\\packages\\jetbrains.annotations\\2021.2.0\\jetbrains.annotations.2021.2.0.nupkg.sha512",
+    "C:\\Users\\kminek\\.nuget\\packages\\json.more.net\\1.7.0\\json.more.net.1.7.0.nupkg.sha512",
+    "C:\\Users\\kminek\\.nuget\\packages\\jsonpointer.net\\3.0.0\\jsonpointer.net.3.0.0.nupkg.sha512",
+    "C:\\Users\\kminek\\.nuget\\packages\\jsonschema.net\\4.0.0\\jsonschema.net.4.0.0.nupkg.sha512",
+    "C:\\Users\\kminek\\.nuget\\packages\\scriban\\5.10.0\\scriban.5.10.0.nupkg.sha512",
+    "C:\\Users\\kminek\\.nuget\\packages\\system.commandline\\2.0.0-beta4.22272.1\\system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
+  ],
+  "logs": []
+}

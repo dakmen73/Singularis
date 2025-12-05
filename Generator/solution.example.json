@@ -1,0 +1,314 @@
+{
+  "$schema": "solution.schema.json",
+  "solution": {
+    "name": "SVAS",
+    "targetFramework": "net10.0",
+    "configurations": ["Debug", "Release", "EasyTest"],
+    "centralPackageManagement": true,
+    "centralPackageFloatingVersions": true,
+     
+    "packages": [
+      { "id": "DevExpress.Drawing.Skia", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Chart", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.CloneObject", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.CodeAnalysis", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ConditionalAppearance", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Dashboards", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Kpi", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Notifications", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Objects", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Office", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.PivotChart", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.PivotGrid", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ReportsV2", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Scheduler", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ScriptRecorder", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Security", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.StateMachine", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.TreeListEditors", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Validation", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ViewVariantsModule", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Workflow", "version": "25.1.*" },
+      { "id": "DevExpress.Persistent.Base", "version": "25.1.*" },
+      { "id": "DevExpress.RichEdit.Export", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Api.Xpo.All", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.AuditTrail.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.MultiTenancy.AspNetCore.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.MultiTenancy.WebApi.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.MultiTenancy.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Security.AspNetCore.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Security.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.Persistent.BaseImpl.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Dashboards.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.FileAttachment.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Notifications.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Office.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ReportsV2.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Scheduler.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Validation.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.MultiTenancy.Blazor.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Security.Xpo.Extensions.Blazor", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Chart.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Dashboards.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.FileAttachment.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Notifications.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Office.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.PivotChart.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.PivotGrid.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ReportsV2.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Scheduler.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.ScriptRecorder.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.TreeListEditors.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Validation.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Win.Design", "version": "25.1.*" },
+      { "id": "DevExpress.Win.Design", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.MultiTenancy.Win.Xpo", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.Security.Xpo.Extensions.Win", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.EasyTest.BlazorAdapter", "version": "25.1.*" },
+      { "id": "DevExpress.ExpressApp.EasyTest.WinAdapter", "version": "25.1.*" },
+      { "id": "Azure.Identity", "version": "1.13.1" },
+      { "id": "Microsoft.Data.SqlClient", "version": "5.2.2" },
+      { "id": "System.IdentityModel.Tokens.Jwt", "version": "8.14.0" },
+      { "id": "Microsoft.AspNetCore.Authentication.Negotiate", "version": "8.0.17" },
+      { "id": "Swashbuckle.AspNetCore", "version": "6.9.0" },
+      { "id": "Swashbuckle.AspNetCore.Annotations", "version": "6.9.0" },
+      { "id": "Selenium.Support", "version": "4.4.0" },
+      { "id": "Selenium.WebDriver", "version": "4.4.0" },
+      { "id": "coverlet.collector", "version": "6.0.2" },
+      { "id": "Microsoft.NET.Test.Sdk", "version": "17.11.1" },
+      { "id": "System.Net.Http", "version": "4.3.4" },
+      { "id": "System.Text.RegularExpressions", "version": "4.3.1" },
+      { "id": "xunit", "version": "2.4.2" },
+      { "id": "xunit.runner.visualstudio", "version": "2.4.3" }
+    ],
+    "projects": [
+      {
+        "name": "SVAS.Module",
+        "type": "library",
+        "targetFramework": "net10.0",
+        "checkEolTargetFramework": false,
+        "deterministic": false,
+        "assemblyVersion": "1.0.*",
+        "fileVersion": "1.0.0.0",
+        "implicitUsings": true,
+        "nugetPackages": [
+          "DevExpress.ExpressApp",
+          "DevExpress.ExpressApp.Chart",
+          "DevExpress.ExpressApp.CloneObject",
+          "DevExpress.ExpressApp.CodeAnalysis",
+          "DevExpress.ExpressApp.ConditionalAppearance",
+          "DevExpress.ExpressApp.Dashboards",
+          "DevExpress.ExpressApp.Objects",
+          "DevExpress.ExpressApp.Office",
+          "DevExpress.ExpressApp.PivotChart",
+          "DevExpress.ExpressApp.PivotGrid",
+          "DevExpress.ExpressApp.ReportsV2",
+          "DevExpress.ExpressApp.Security",
+          "DevExpress.ExpressApp.Security.Xpo",
+          "DevExpress.ExpressApp.TreeListEditors",
+          "DevExpress.ExpressApp.Validation",
+          "DevExpress.ExpressApp.ViewVariantsModule",
+          "DevExpress.ExpressApp.Xpo",
+          "DevExpress.Persistent.Base",
+          "DevExpress.Persistent.BaseImpl.Xpo",
+          "Azure.Identity",
+          "Microsoft.Data.SqlClient",
+          "System.IdentityModel.Tokens.Jwt"
+        ],
+        "embeddedResources": ["Model.DesignedDiffs.xafml"],
+        "folders": ["BusinessObjects", "Controllers", "DatabaseUpdate", "Images"],
+        "files": [
+          {
+            "path": "Module.cs",
+            "template": "module-class",
+            "namespace": "SVAS.Module"
+          }
+        ]
+      },
+      {
+        "name": "SVAS.Blazor.Server",
+        "type": "blazor",
+        "targetFramework": "net10.0",
+        "checkEolTargetFramework": false,
+        "deterministic": false,
+        "assemblyVersion": "1.0.*",
+        "fileVersion": "1.0.0.0",
+        "implicitUsings": true,
+        "dependencies": ["SVAS.Module"],
+        "nugetPackages": [
+          "DevExpress.Drawing.Skia",
+          "DevExpress.ExpressApp.Blazor",
+          "DevExpress.ExpressApp.CodeAnalysis",
+          "DevExpress.ExpressApp.Dashboards.Blazor",
+          "DevExpress.ExpressApp.FileAttachment.Blazor",
+          "DevExpress.ExpressApp.Office.Blazor",
+          "DevExpress.ExpressApp.ReportsV2.Blazor",
+          "DevExpress.ExpressApp.Security.Xpo",
+          "DevExpress.ExpressApp.Validation.Blazor",
+          "Microsoft.AspNetCore.Authentication.Negotiate"
+        ],
+        "contentFiles": [
+          {
+            "path": "Model.xafml",
+            "copyToOutput": "Always"
+          }
+        ],
+        "folders": ["Controllers", "Editors", "Images", "Pages", "Services"],
+        "files": [
+          {
+            "path": "Program.cs",
+            "template": "blazor-program",
+            "namespace": "SVAS.Blazor.Server"
+          },
+          {
+            "path": "BlazorApplication.cs",
+            "template": "custom",
+            "namespace": "SVAS.Blazor.Server"
+          },
+          {
+            "path": "BlazorModule.cs",
+            "template": "custom",
+            "namespace": "SVAS.Blazor.Server"
+          }
+        ]
+      },
+      {
+        "name": "SVAS.WebApi",
+        "type": "web",
+        "targetFramework": "net10.0",
+        "checkEolTargetFramework": false,
+        "deterministic": false,
+        "assemblyVersion": "1.0.*",
+        "fileVersion": "1.0.0.0",
+        "implicitUsings": true,
+        "dependencies": ["SVAS.Module"],
+        "nugetPackages": [
+          "DevExpress.Drawing.Skia",
+          "DevExpress.ExpressApp.Api.Xpo.All",
+          "DevExpress.ExpressApp.CodeAnalysis",
+          "DevExpress.ExpressApp.ReportsV2",
+          "DevExpress.ExpressApp.Validation",
+          "Microsoft.AspNetCore.Authentication.Negotiate",
+          "Swashbuckle.AspNetCore",
+          "Swashbuckle.AspNetCore.Annotations"
+        ],
+        "folders": ["API"],
+        "files": [
+          {
+            "path": "Program.cs",
+            "template": "web-program",
+            "namespace": "SVAS.WebApi"
+          },
+          {
+            "path": "Startup.cs",
+            "template": "custom",
+            "namespace": "SVAS.WebApi"
+          }
+        ]
+      },
+      {
+        "name": "SVAS.Win",
+        "type": "win",
+        "targetFramework": "net10.0-windows",
+        "outputType": "WinExe",
+        "useWindowsForms": true,
+        "applicationIcon": "ExpressApp.ico",
+        "checkEolTargetFramework": false,
+        "deterministic": false,
+        "assemblyVersion": "1.0.*",
+        "fileVersion": "1.0.0.0",
+        "implicitUsings": true,
+        "dependencies": ["SVAS.Module"],
+        "nugetPackages": [
+          "DevExpress.ExpressApp",
+          "DevExpress.ExpressApp.Chart.Win",
+          "DevExpress.ExpressApp.CodeAnalysis",
+          "DevExpress.ExpressApp.Dashboards.Win",
+          "DevExpress.ExpressApp.FileAttachment.Win",
+          "DevExpress.ExpressApp.Office.Win",
+          "DevExpress.ExpressApp.PivotChart.Win",
+          "DevExpress.ExpressApp.PivotGrid.Win",
+          "DevExpress.ExpressApp.ReportsV2.Win",
+          "DevExpress.ExpressApp.Security.Xpo",
+          "DevExpress.ExpressApp.TreeListEditors.Win",
+          "DevExpress.ExpressApp.Validation.Win",
+          "DevExpress.ExpressApp.Win",
+          "DevExpress.ExpressApp.Win.Design",
+          "DevExpress.ExpressApp.Xpo",
+          "DevExpress.Persistent.Base",
+          "DevExpress.Persistent.BaseImpl.Xpo",
+          "DevExpress.RichEdit.Export",
+          "DevExpress.Win.Design"
+        ],
+        "usingAliases": [
+          {
+            "namespace": "DevExpress.ExpressApp.ListView",
+            "alias": "ListView"
+          }
+        ],
+        "contentFiles": [
+          {
+            "path": "Model.xafml",
+            "copyToOutput": "Always"
+          }
+        ],
+        "embeddedResources": [
+          "Images/Logo.svg",
+          "Images/ExpressAppLogo.png"
+        ],
+        "folders": ["Controllers", "Editors", "Images"],
+        "files": [
+          {
+            "path": "Program.cs",
+            "template": "win-program",
+            "namespace": "SVAS.Win"
+          },
+          {
+            "path": "WinApplication.cs",
+            "template": "custom",
+            "namespace": "SVAS.Win"
+          },
+          {
+            "path": "WinModule.cs",
+            "template": "custom",
+            "namespace": "SVAS.Win"
+          }
+        ]
+      },
+      {
+        "name": "SVAS.E2E.Tests",
+        "type": "test",
+        "targetFramework": "net10.0-windows",
+        "useWindowsForms": true,
+        "isPackable": false,
+        "checkEolTargetFramework": false,
+        "implicitUsings": true,
+        "dependencies": ["SVAS.Module"],
+        "nugetPackages": [
+          "coverlet.collector",
+          "Microsoft.NET.Test.Sdk",
+          "System.Net.Http",
+          "System.Text.RegularExpressions",
+          "xunit",
+          "xunit.runner.visualstudio",
+          "DevExpress.ExpressApp.EasyTest.BlazorAdapter",
+          "Selenium.Support",
+          "Selenium.WebDriver",
+          "DevExpress.ExpressApp.EasyTest.WinAdapter"
+        ],
+        "files": [
+          {
+            "path": "Tests.cs",
+            "template": "custom",
+            "namespace": "SVAS.E2E.Tests"
+          }
+        ]
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,3982 @@
+{
+  "type": "xpo",
+  "classes": [
+    {
+      "name": "CAP",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_CAP",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Identifier",
+          "type": "string",
+          "displayName": "Identifik\u00E1tor",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "NotifyHtml",
+          "type": "string",
+          "displayName": "Zpr\u00E1va",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": "Unlimited"
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DestovaStanice",
+      "namespace": "GA.INF.BO",
+      "baseClass": "GA.INF.BO.INF_Bod",
+      "implementedInterfaces": [],
+      "persistent": "pis_DestovaStanice",
+      "imageName": "GA_tank-water",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "StationWSID",
+          "type": "string",
+          "displayName": "Station WSID",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "GHID",
+          "type": "string",
+          "displayName": "Hydrologick\u00FD identifik\u00E1tor",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "WSI",
+          "type": "string",
+          "displayName": "Meteorologick\u00FD identifik\u00E1tor",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "GetWebPage",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "CreateDate",
+          "type": "DateTime",
+          "displayName": "Datum vytvo\u0159en\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EvidentNumber",
+          "type": "string",
+          "displayName": "Eviden\u010Dn\u00ED \u010D\u00EDslo",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Notice",
+          "type": "string",
+          "displayName": "Pozn\u00E1mka",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": "Unlimited"
+        },
+        {
+          "name": "Pracovnik",
+          "type": "GA_User",
+          "displayName": "Pracovn\u00EDk",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_CAP",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_CAP",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "CAPRecord",
+          "type": "PIS_CAP",
+          "displayName": "CAP z\u00E1znam",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_GIS",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_GIS",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_HP",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_HP",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "DPKRefHP"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NotifikaceLimitu",
+          "type": "PIS_NotifikaceLimitu",
+          "displayName": "Limit",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "DPK_PISObject",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_DPK",
+      "implementedInterfaces": [],
+      "persistent": "pis_DPK_PISObject",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "PISObject",
+          "type": "PIS_VObject",
+          "displayName": "Virtu\uFFFDln\uFFFD objekt",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "DPKRefVObject"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NotifikaceLimitu",
+          "type": "PIS_NotifikaceLimitu",
+          "displayName": "Limit",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "GeneralLimit",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [
+        "INotifiableObject"
+      ],
+      "persistent": "pis_GeneralLimit",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "OrderNumber",
+          "type": "int",
+          "displayName": "Po\u0159ad\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "GisLimit",
+      "namespace": "",
+      "baseClass": null,
+      "implementedInterfaces": [],
+      "persistent": null,
+      "imageName": null,
+      "nonPersistent": true,
+      "attributes": [],
+      "collections": [],
+      "methods": [],
+      "customAttributes": []
+    },
+    {
+      "name": "HlasnyProfil",
+      "namespace": "GA.INF.BO",
+      "baseClass": "GA.INF.BO.INF_Bod",
+      "implementedInterfaces": [
+        "IDiagramItem"
+      ],
+      "persistent": "pis_HlasnyProfil",
+      "imageName": "GA_ruler-vertical_water",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "CentrumAutomatickehoSberuDat",
+          "type": "string",
+          "displayName": "Centrum automatick\u00E9ho sb\u011Bru dat",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "CetnostHlaseniSPAI",
+          "type": "int",
+          "displayName": "\u010Cetnost 1.SPA (Bd\u011Blost) [cm]",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "cm",
+              "parameters": {}
+            }
+          ]
+        },
+        {
+          "name": "CetnostHlaseniSPAII",
+          "type": "int",
+          "displayName": "\u010Cetnost 2.SPA (Pohotovost) [cm]",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "cm",
+              "parameters": {}
+            }
+          ]
+        },
+        {
+          "name": "CetnostHlaseniSPAIII",
+          "type": "int",
+          "displayName": "\u010Cetnost 3.SPA (Extr\u00E9mn\u00ED povode\u0148) [cm]",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "cm",
+              "parameters": {}
+            }
+          ]
+        },
+        {
+          "name": "CisloHydrologickehoPoradi",
+          "type": "string",
+          "displayName": "\u010C\u00EDslo hydrologick\u00E9ho po\u0159ad\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "CisloHydroPoradi",
+          "type": "string",
+          "displayName": "\u010C\u00EDslo hydrologick\u00E9ho po\u0159ad\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "CoordinateX",
+          "type": "int",
+          "displayName": "Sou\u0159adnice X",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "CoordinateY",
+          "type": "int",
+          "displayName": "Sou\u0159adnice Y",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "EvidencniListHP",
+          "type": "string",
+          "displayName": "Eviden\u010Dn\u00ED list hl\u00E1sn\u00E9ho profilu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Hladina",
+          "type": "decimal",
+          "displayName": "Hladina",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "#########0.00## cm"
+              }
+            }
+          ]
+        },
+        {
+          "name": "KategorieStanice",
+          "type": "string",
+          "displayName": "Kategorie stanice",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Kraj",
+          "type": "ADR_Kraj",
+          "displayName": "Kraj",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "KritickeMisto",
+          "type": "string",
+          "displayName": "Kritick\u00E9 m\u00EDisto",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "LastDatum",
+          "type": "DateTime",
+          "displayName": "Datum posledn\u00EDho ode\u010Dtu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "NejvyssiZaznamenaneStavy",
+          "type": "decimal",
+          "displayName": "Nejvy\u0161\u0161\u00ED zaznamenan\u00E9 stavy",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "#########0.00## cm"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N4"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NejvyssiZaznamenaneStavyDatum",
+          "type": "DateTime",
+          "displayName": "Nejvy\u0161\u0161\u00ED zaznamenan\u00E9 stavy datum",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "NLetePrutokyQ1",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q1",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ10",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q10",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ100",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q100",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ2",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q2",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ20",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q20",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ355",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q355",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ5",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q5",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NLetePrutokyQ50",
+          "type": "decimal",
+          "displayName": "NLet\u00E9 pr\u016Ftoky Q50",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N3} m/s"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "{0:N3} m/s"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NulaVodoctu",
+          "type": "decimal",
+          "displayName": "Nula vodo\u010Dtu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Obec",
+          "type": "ADR_Obec",
+          "displayName": "Obec",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "ORP",
+          "type": "ADR_Obec",
+          "displayName": "ORP",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "PlatnostSPAProUsekToku",
+          "type": "string",
+          "displayName": "Platnost SPA pro \u00FAsek toku",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "PlochaPovodi",
+          "type": "decimal",
+          "displayName": "Plocha povod\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "#########0.00## km"
+              }
+            }
+          ]
+        },
+        {
+          "name": "PopisUmisteniProfilu",
+          "type": "string",
+          "displayName": "Popis um\u00EDst\u011Bn\u00ED profilu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Poznamka",
+          "type": "string",
+          "displayName": "Pozn\u00E1mka",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": "Unlimited"
+        },
+        {
+          "name": "ProcentoPlochyPovodiToku",
+          "type": "decimal",
+          "displayName": "Procento plochy povodi toku",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "####0.00## %"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "PrumernyRocniPrutok",
+          "type": "decimal",
+          "displayName": "Pr\u016Fm\u011Brn\u00FD ro\u010Dn\u00ED pr\u016Ftok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "PrumernyRocniStav",
+          "type": "decimal",
+          "displayName": "Pr\u016Fm\u011Brn\u00FD ro\u010Dni stav",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Prutok",
+          "type": "decimal",
+          "displayName": "Pr\u016Ftok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "### ### ##0.####"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Staniceni",
+          "type": "decimal",
+          "displayName": "Stani\u010Den\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "StationWSID",
+          "type": "string",
+          "displayName": "Station WSID",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Teplota",
+          "type": "decimal",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tok",
+          "type": "PIS_Reka",
+          "displayName": "Tok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "ZemepisneSouradniceX",
+          "type": "decimal",
+          "displayName": "Zem\u011Bpisn\u00E9 sou\u0159adniceX",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N7"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ZemepisneSouradniceY",
+          "type": "decimal",
+          "displayName": "Zem\u011Bpisn\u00E9 sou\u0159adniceY",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0}"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N7"
+              }
+            }
+          ]
+        },
+        {
+          "name": "BasicUrl",
+          "type": "string",
+          "displayName": "BasicUrl",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Browsable",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "GetTooltip",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "ToString",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "GetWebPage",
+          "returnType": "string",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "Limit",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_GeneralLimit",
+      "implementedInterfaces": [],
+      "persistent": "pis_Limit",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "DashStyle",
+          "type": "e_StylCary",
+          "displayName": "DashStyle",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Hodnota",
+          "type": "decimal",
+          "displayName": "Hodnota",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "#########0.00## cm"
+              }
+            },
+            {
+              "type": "RuleRequiredField",
+              "parameters": {
+                "value": "RuleRequiredField for PIS_Hodnota"
+              }
+            }
+          ]
+        },
+        {
+          "name": "JePrvniSPA",
+          "type": "bool",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "NazevLimitu",
+          "type": "string",
+          "displayName": "N\u00E1zev limitu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "RuleRequiredField",
+              "parameters": {
+                "value": "RuleRequiredField for PIS_NazevLimitu"
+              }
+            }
+          ],
+          "size": 100
+        },
+        {
+          "name": "NoticeLimit",
+          "type": "string",
+          "displayName": "Pozn\u00E1mka",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 1000
+        },
+        {
+          "name": "Tloustka",
+          "type": "int",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Typ",
+          "type": "e_TypLimitu",
+          "displayName": "Typ limitu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "RuleRequiredField",
+              "parameters": {
+                "value": "RuleRequiredField for PIS_Limit.Typ"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ZobrazitVGrafu",
+          "type": "bool",
+          "displayName": "ZobrazitVGrafu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Barva",
+          "type": "Color",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "LimitNonSPA",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_Limit",
+      "implementedInterfaces": [],
+      "persistent": "pis_LimitNonSPA",
+      "imageName": "GA_ruler-vertical_square-s_square-p",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "LimitNonSPARefHP"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "LimitNonSPA1",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_Limit",
+      "implementedInterfaces": [],
+      "persistent": "pis_LimitNonSPA1",
+      "imageName": "GA_ruler-vertical_water-arrow-up",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "Vobject",
+          "type": "PIS_VObject",
+          "displayName": "Virtu\u00E1ln\u00ED objekt",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "LimitNonSPA1RefVObject"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "OnSaving",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "LimitSPA",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PIS_Limit",
+      "implementedInterfaces": [],
+      "persistent": "pis_LimitSPA",
+      "imageName": "GA_ruler-vertical_parking-slash",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "LimitSPARefHP"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Stupen",
+          "type": "e_StupenAktivity",
+          "displayName": "Stupe\u0148",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "NotifikaceLimitu",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_NotifikaceLimitu",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Limit",
+          "type": "PIS_Limit",
+          "displayName": "Limit",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "NLRefLimit"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Type",
+          "type": "e_TypeOfNotificationLimit",
+          "displayName": "Typ notifikace",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Way",
+          "type": "e_WayOfLimit",
+          "displayName": "Typ limitu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "OnDeleting",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "NotifikaceLimituZadost",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [
+        "INotifiableObject"
+      ],
+      "persistent": "pis_NotifikaceLimituZadost",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AktualniHodnota",
+          "type": "decimal",
+          "displayName": "Aktu\u00E1ln\u00ED hodnota",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "DatumHodnoty",
+          "type": "DateTime",
+          "displayName": "Datum hodnoty",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "DatumZadosti",
+          "type": "DateTime",
+          "displayName": "Datum \u017E\u00E1dosti",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "DatumZaslani",
+          "type": "DateTime",
+          "displayName": "Datum zasl\u00E1n\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "NotificationLimit",
+          "type": "PIS_NotifikaceLimitu",
+          "displayName": "Notifikace limitu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Status",
+          "type": "e_StatusNotifikace",
+          "displayName": "Status",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "NotifiableRule",
+          "type": "NotifiableRuleSet",
+          "displayName": "Notifikovan\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "VObject",
+          "type": "PIS_VObject",
+          "displayName": "PIS Object",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "Objekt",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_Objekt",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NazevObjektu",
+          "type": "string",
+          "displayName": "N\u00E1zev objektu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetDS",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetDS",
+      "imageName": "GA_cloud-showers_gauge-circle-plus",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": "Datum a \u010Das",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hodnota",
+          "type": "double",
+          "displayName": "Hodnota",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "N3"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Stanice",
+          "type": "PIS_DestovaStanice",
+          "displayName": "De\u0161\u0165ov\u00E1 stanice",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "OdectyRefDS"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetVS",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetVS",
+      "imageName": "GA_ruler-vertical_gauge-circle-plus",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": "Datum a \u010Das",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hladina",
+          "type": "double",
+          "displayName": "Hladina",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0} cm"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N0"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HladinaRucne",
+          "type": "double",
+          "displayName": "Hladina ru\u010Dn\u011B",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0} cm"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N0"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "OdectyRefHP"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Poznamka",
+          "type": "string",
+          "displayName": "Pozn\u00E1mka",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": "Unlimited"
+        },
+        {
+          "name": "Prutok",
+          "type": "double",
+          "displayName": "Pr\u016Ftok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Teplota",
+          "type": "double",
+          "displayName": "Teplota",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Typ",
+          "type": "e_TypeOfOdecet",
+          "displayName": "Typ z\u00E1znamu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "FAKESPA",
+          "type": "double",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SPAachieved",
+          "type": "PIS_Limit",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetVS_his",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetVS_his",
+      "imageName": "GA_reply-clock",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Hladina",
+          "type": "double",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "HladinaRucne",
+          "type": "double",
+          "displayName": "Hladina ru\u010Dn\u011B",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "OdectyHisRefHP"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Poznamka",
+          "type": "string",
+          "displayName": "Pozn\u00E1mka",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": "Unlimited"
+        },
+        {
+          "name": "Prutok",
+          "type": "double",
+          "displayName": "Pr\u016Ftok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        },
+        {
+          "name": "Rok",
+          "type": "GA_CasY",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "NoForeignKey",
+              "parameters": {}
+            }
+          ]
+        },
+        {
+          "name": "Teplota",
+          "type": "double",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "OdecetVS_sim",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_OdecetVS_sim",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": "Datum",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hladina",
+          "type": "decimal",
+          "displayName": "Hladina",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "N3"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Prutok",
+          "type": "decimal",
+          "displayName": "Prutok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 1,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "N3"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Poznamka",
+          "type": "string",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "System.ComponentModel.DisplayName",
+              "parameters": {
+                "value": "Pozn\u00E1mka k simulaci"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "OdectySimRefHP"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "PISObject",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.Core.BO.GAObject",
+      "implementedInterfaces": [],
+      "persistent": null,
+      "imageName": null,
+      "nonPersistent": true,
+      "attributes": [],
+      "collections": [],
+      "methods": [],
+      "customAttributes": []
+    },
+    {
+      "name": "ProcessStates",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "vw_pis_ProcessStates",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": "Posledn\u00ED spu\u0161t\u011Bn\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DatumNext",
+          "type": "DateTime",
+          "displayName": "P\u0159\u00ED\u0161t\u00ED spu\u0161t\u011Bn\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nazev",
+          "type": "string",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "System.ComponentModel.DisplayName",
+              "parameters": {
+                "value": "N\u00E1zev slu\u017Eby"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Zdroj",
+          "type": "string",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "System.ComponentModel.DisplayName",
+              "parameters": {
+                "value": "Zdroj dat"
+              }
+            }
+          ]
+        },
+        {
+          "name": "State",
+          "type": "e_ProcesState",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "System.ComponentModel.DisplayName",
+              "parameters": {
+                "value": "Stav"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "Reka",
+      "namespace": "GA.INF.BO",
+      "baseClass": "GA.INF.BO.INF_Linie",
+      "implementedInterfaces": [],
+      "persistent": "pis_Reka",
+      "imageName": "GA_water",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "DelkaCelkem",
+          "type": "decimal",
+          "displayName": "D\u00E9lka celkem",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "#########0.00## km"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N3"
+              }
+            },
+            {
+              "type": "DevExpress.ExpressApp.Model.DetailViewLayout",
+              "parameters": {
+                "value": "DalsiUdaje"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DelkaCR",
+          "type": "decimal",
+          "displayName": "D\u00E9lka v \u010CR",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "#########0.00## km"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N3"
+              }
+            },
+            {
+              "type": "DevExpress.ExpressApp.Model.DetailViewLayout",
+              "parameters": {
+                "value": "DalsiUdaje"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HydroPoradi",
+          "type": "string",
+          "displayName": "Hydrologick\u00E9 po\u0159ad\u00ED",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "DevExpress.ExpressApp.Model.DetailViewLayout",
+              "parameters": {
+                "value": "DalsiUdaje"
+              }
+            }
+          ],
+          "size": 100
+        },
+        {
+          "name": "Identifikator",
+          "type": "string",
+          "displayName": "Identifik\u00E1tor",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "DevExpress.ExpressApp.Model.DetailViewLayout",
+              "parameters": {
+                "value": "DalsiUdaje"
+              }
+            }
+          ],
+          "size": 100
+        },
+        {
+          "name": "PovodiCR",
+          "type": "decimal",
+          "displayName": "Povod\u00ED v \u010CR [km2]",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "km2",
+              "parameters": {}
+            },
+            {
+              "type": "DevExpress.ExpressApp.Model.DetailViewLayout",
+              "parameters": {
+                "value": "DalsiUdaje"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "RuleSetDetail",
+      "namespace": "",
+      "baseClass": null,
+      "implementedInterfaces": [],
+      "persistent": null,
+      "imageName": null,
+      "nonPersistent": true,
+      "attributes": [],
+      "collections": [],
+      "methods": [],
+      "customAttributes": []
+    },
+    {
+      "name": "Simulace",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_Simulace",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": "Datum a \u010Das",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hladina",
+          "type": "double",
+          "displayName": "Hladina",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "{0:N0} cm"
+              }
+            },
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "EditMask": "N0"
+              }
+            },
+            {
+              "type": "ImmediatePostData",
+              "parameters": {}
+            }
+          ]
+        },
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "HPRefSim"
+              }
+            },
+            {
+              "type": "ImmediatePostData",
+              "parameters": {}
+            }
+          ]
+        },
+        {
+          "name": "Prutok",
+          "type": "double",
+          "displayName": "Pr\u016Ftok",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": []
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "OnChanged",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": [
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "oldValue",
+              "type": "object"
+            },
+            {
+              "name": "newValue",
+              "type": "object"
+            }
+          ]
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "TopStavy",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_TopStavy",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Datum",
+          "type": "DateTime",
+          "displayName": "Datum",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "G"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HlasnyProfil",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Hl\u00E1sn\u00FD profil",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "TopStavyRefHP"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hodnota",
+          "type": "decimal",
+          "displayName": "Hodnota",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "ModelDefault",
+              "parameters": {
+                "DisplayFormat": "N3"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "TypObjektu",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_TypObjektu",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NazevTypuObjektu",
+          "type": "string",
+          "displayName": "N\u00E1zev typu",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Zkratka",
+          "type": "string",
+          "displayName": "Zkratka",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "VlastnostObjektu",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_VlastnostObjektu",
+      "imageName": null,
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HodnotaVlastnosti",
+          "type": "string",
+          "displayName": "Hodnota",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "NazevVlastnosti",
+          "type": "string",
+          "displayName": "N\u00E1zev vlastnosti",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "Objekt",
+          "type": "PIS_Objekt",
+          "displayName": "Objekt",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "ObjektRefVlastnostObjektu"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        },
+        {
+          "name": "PripravAgregace",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    },
+    {
+      "name": "VObject",
+      "namespace": "GA.PIS.BO",
+      "baseClass": "GA.PIS.BO.PISObject",
+      "implementedInterfaces": [],
+      "persistent": "pis_VObject",
+      "imageName": "house-water",
+      "nonPersistent": false,
+      "attributes": [
+        {
+          "name": "OID",
+          "type": "Guid",
+          "displayName": null,
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": true,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": null,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "VisibleInDetailView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInListView",
+              "parameters": {
+                "value": "false"
+              }
+            },
+            {
+              "type": "VisibleInLookupListView",
+              "parameters": {
+                "value": "false"
+              }
+            }
+          ]
+        },
+        {
+          "name": "VObjectName",
+          "type": "string",
+          "displayName": "N\u00E1zev",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [],
+          "size": 100
+        },
+        {
+          "name": "VodomernaStanice",
+          "type": "PIS_HlasnyProfil",
+          "displayName": "Vodom\u011Brn\u00E1 stanice",
+          "persistent": null,
+          "columnType": null,
+          "virtualColumnType": null,
+          "isKey": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "index": 0,
+          "delayedUpdateModifiedOnly": false,
+          "customAttributes": [
+            {
+              "type": "Association",
+              "parameters": {
+                "name": "HPRefVOBJ"
+              }
+            },
+            {
+              "type": "RuleRequiredField",
+              "parameters": {
+                "value": "RuleRequiredField for PIS_VObject.VodomernaStanice"
+              }
+            }
+          ]
+        }
+      ],
+      "collections": [],
+      "methods": [
+        {
+          "name": "AfterConstruction",
+          "returnType": "void",
+          "isStatic": false,
+          "isAbstract": false,
+          "parameters": []
+        }
+      ],
+      "customAttributes": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "inheritance",
+      "from": "CAP",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "DestovaStanice",
+      "to": "GA.INF.BO.INF_Bod"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_CAP",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_GIS",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_HP",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "DPK_PISObject",
+      "to": "GA.PIS.BO.PIS_DPK"
+    },
+    {
+      "type": "inheritance",
+      "from": "GeneralLimit",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "HlasnyProfil",
+      "to": "GA.INF.BO.INF_Bod"
+    },
+    {
+      "type": "inheritance",
+      "from": "Limit",
+      "to": "GA.PIS.BO.PIS_GeneralLimit"
+    },
+    {
+      "type": "inheritance",
+      "from": "LimitNonSPA",
+      "to": "GA.PIS.BO.PIS_Limit"
+    },
+    {
+      "type": "inheritance",
+      "from": "LimitNonSPA1",
+      "to": "GA.PIS.BO.PIS_Limit"
+    },
+    {
+      "type": "inheritance",
+      "from": "LimitSPA",
+      "to": "GA.PIS.BO.PIS_Limit"
+    },
+    {
+      "type": "inheritance",
+      "from": "NotifikaceLimitu",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "NotifikaceLimituZadost",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "Objekt",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetDS",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetVS",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetVS_his",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "OdecetVS_sim",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "PISObject",
+      "to": "GA.Core.BO.GAObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "ProcessStates",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "Reka",
+      "to": "GA.INF.BO.INF_Linie"
+    },
+    {
+      "type": "inheritance",
+      "from": "Simulace",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "TopStavy",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "TypObjektu",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "VlastnostObjektu",
+      "to": "GA.PIS.BO.PISObject"
+    },
+    {
+      "type": "inheritance",
+      "from": "VObject",
+      "to": "GA.PIS.BO.PISObject"
+    }
+  ],
+  "notes": [],
+  "externalTypes": []
+}

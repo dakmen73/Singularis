@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "8pK5jpCbu68=",
+  "success": true,
+  "projectFilePath": "C:\\GIST\\SG\\Generator\\TestOutput5\\SVAS.Blazor.Server\\SVAS.Blazor.Server.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1507",
+      "level": "Warning",
+      "message": "Ve vaší konfiguraci jsou definovány 2 zdroje balíčků. Při použití centrální správy balíčků prosím namapujte zdroje balíčků pomocí mapování zdrojů balíčků (https://aka.ms/nuget-package-source-mapping) nebo zadejte jeden zdroj balíčku. Jsou definovány následující zdroje: nuget.org, Devexpress",
+      "projectPath": "C:\\GIST\\SG\\Generator\\TestOutput5\\SVAS.Blazor.Server\\SVAS.Blazor.Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\GIST\\SG\\Generator\\TestOutput5\\SVAS.Blazor.Server\\SVAS.Blazor.Server.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

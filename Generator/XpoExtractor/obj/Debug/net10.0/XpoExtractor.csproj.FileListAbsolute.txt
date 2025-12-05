@@ -1,0 +1,11 @@
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\XpoExtractor.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\XpoExtractor.AssemblyInfoInputs.cache
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\XpoExtractor.AssemblyInfo.cs
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\XpoExtractor.csproj.CoreCompileInputs.cache
+C:\GIST\SG\Generator\XpoExtractor\bin\Debug\net10.0\XpoExtractor.deps.json
+C:\GIST\SG\Generator\XpoExtractor\bin\Debug\net10.0\XpoExtractor.dll
+C:\GIST\SG\Generator\XpoExtractor\bin\Debug\net10.0\XpoExtractor.pdb
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\XpoExtractor.dll
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\refint\XpoExtractor.dll
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\XpoExtractor.pdb
+C:\GIST\SG\Generator\XpoExtractor\obj\Debug\net10.0\ref\XpoExtractor.dll

@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/mermaid-class-diagram.schema.json",
+  "title": "Mermaid Class Diagram",
+  "description": "JSON Schema pro reprezentaci Mermaid Class diagramů",
+  "type": "object",
+  "required": ["type", "classes"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "classDiagram",
+      "description": "Typ diagramu - vždy classDiagram"
+    },
+    "classes": {
+      "type": "array",
+      "description": "Seznam tříd v diagramu",
+      "items": {
+        "$ref": "#/$defs/class"
+      },
+      "minItems": 1
+    },
+    "relationships": {
+      "type": "array",
+      "description": "Seznam vztahů mezi třídami",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "array",
+      "description": "Poznámky k třídám",
+      "items": {
+        "$ref": "#/$defs/note"
+      },
+      "default": []
+    }
+  },
+  "$defs": {
+    "class": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název třídy",
+          "minLength": 1
+        },
+        "stereotype": {
+          "type": "string",
+          "enum": ["interface", "abstract", "enumeration", "service"],
+          "description": "Stereotyp třídy"
+        },
+        "attributes": {
+          "type": "array",
+          "description": "Atributy (properties) třídy",
+          "items": {
+            "$ref": "#/$defs/attribute"
+          },
+          "default": []
+        },
+        "methods": {
+          "type": "array",
+          "description": "Metody třídy",
+          "items": {
+            "$ref": "#/$defs/method"
+          },
+          "default": []
+        },
+        "annotations": {
+          "type": "array",
+          "description": "Anotace třídy",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název atributu",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "Datový typ atributu (String, int, boolean, ...)",
+          "minLength": 1
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["public", "private", "protected", "package"],
+          "description": "Viditelnost: public (+), private (-), protected (#), package (~)",
+          "default": "private"
+        },
+        "isStatic": {
+          "type": "boolean",
+          "description": "Je statický atribut?",
+          "default": false
+        },
+        "isAbstract": {
+          "type": "boolean",
+          "description": "Je abstraktní?",
+          "default": false
+        },
+        "defaultValue": {
+          "type": "string",
+          "description": "Výchozí hodnota"
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název metody",
+          "minLength": 1
+        },
+        "returnType": {
+          "type": "string",
+          "description": "Návratový typ metody",
+          "default": "void"
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["public", "private", "protected", "package"],
+          "description": "Viditelnost: public (+), private (-), protected (#), package (~)",
+          "default": "public"
+        },
+        "parameters": {
+          "type": "array",
+          "description": "Parametry metody",
+          "items": {
+            "$ref": "#/$defs/parameter"
+          },
+          "default": []
+        },
+        "isStatic": {
+          "type": "boolean",
+          "description": "Je statická metoda?",
+          "default": false
+        },
+        "isAbstract": {
+          "type": "boolean",
+          "description": "Je abstraktní?",
+          "default": false
+        }
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Název parametru",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "Datový typ parametru",
+          "minLength": 1
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["type", "from", "to"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "inheritance",
+            "composition",
+            "aggregation",
+            "association",
+            "link",
+            "dependency",
+            "realization"
+          ],
+          "description": "Typ vztahu mezi třídami"
+        },
+        "from": {
+          "type": "string",
+          "description": "Název zdrojové třídy",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "description": "Název cílové třídy",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "description": "Popisek vztahu"
+        },
+        "fromMultiplicity": {
+          "type": "string",
+          "description": "Kardinalita na straně from (např. '1', '0..1', '0..*', '1..*')"
+        },
+        "toMultiplicity": {
+          "type": "string",
+          "description": "Kardinalita na straně to (např. '1', '0..1', '0..*', '1..*')"
+        },
+        "fromLabel": {
+          "type": "string",
+          "description": "Popisek role na straně from"
+        },
+        "toLabel": {
+          "type": "string",
+          "description": "Popisek role na straně to"
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "required": ["text", "className"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text poznámky",
+          "minLength": 1
+        },
+        "className": {
+          "type": "string",
+          "description": "Název třídy, ke které se poznámka vztahuje",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

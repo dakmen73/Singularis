@@ -1,0 +1,12 @@
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.csproj.AssemblyReference.cache
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.AssemblyInfoInputs.cache
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.AssemblyInfo.cs
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.csproj.CoreCompileInputs.cache
+C:\GIST\SG\Generator\SolutionGenerator.Core\bin\Debug\net10.0\SolutionGenerator.Core.deps.json
+C:\GIST\SG\Generator\SolutionGenerator.Core\bin\Debug\net10.0\SolutionGenerator.Core.dll
+C:\GIST\SG\Generator\SolutionGenerator.Core\bin\Debug\net10.0\SolutionGenerator.Core.pdb
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.dll
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\refint\SolutionGenerator.Core.dll
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\SolutionGenerator.Core.pdb
+C:\GIST\SG\Generator\SolutionGenerator.Core\obj\Debug\net10.0\ref\SolutionGenerator.Core.dll

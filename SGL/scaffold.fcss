@@ -1,0 +1,26 @@
+:root {
+  --solution: "DemoApp";
+  --tfm: "net8.0";
+  --projects: ["Core", "Models", "Web"];
+}
+
+@exec { run: "dotnet new sln -n ${--solution}"; }
+
+@foreach p in var(--projects) {
+  /src/${p}/ {
+    create-dir: true;
+    
+    file "${p}.csproj" {
+      template: "templates/classlib.csproj.sbn";
+      model: { name: "${p}", tfm: var(--tfm) }
+      mode: "overwrite-if-changed";
+    }
+    
+    file "Class1.cs" {
+      template: "templates/Class.cs.sbn";
+      model: { namespace: "${--solution}.${p}" }
+    }
+  }
+  
+  @exec { run: "dotnet sln add src/${p}/${p}.csproj"; }
+}
