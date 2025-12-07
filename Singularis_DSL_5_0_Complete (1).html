@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Singularis DSL 5.0 — Kompletní specifikace</title>
+<style>
+:root {
+    --bg: #0a0f1a;
+    --panel: #0d1424;
+    --panel-hover: #111b2e;
+    --ink: #e2e8f0;
+    --muted: #64748b;
+    --line: #1e293b;
+    --brand: #8b5cf6;
+    --brand-light: #a78bfa;
+    --emerald: #10b981;
+    --emerald-light: #34d399;
+    --gold: #f59e0b;
+    --gold-light: #fbbf24;
+    --rose: #f43f5e;
+    --rose-light: #fb7185;
+    --cyan: #06b6d4;
+    --cyan-light: #22d3ee;
+    --orange: #f97316;
+    --blue: #3b82f6;
+    --pink: #ec4899;
+    --lime: #84cc16;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+nav.sidebar {
+    background: var(--panel);
+    border-right: 1px solid var(--line);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+nav.sidebar::-webkit-scrollbar { width: 6px; }
+nav.sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+.sidebar-header {
+    padding: 0 16px 16px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 12px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--brand), var(--pink));
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+}
+
+.logo-text { font-size: 16px; font-weight: 700; }
+.logo-ver {
+    font-size: 10px;
+    color: var(--brand-light);
+    background: rgba(139, 92, 246, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 2px;
+}
+
+.nav-group { margin-bottom: 8px; }
+.nav-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 10px 16px 6px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+    background: var(--panel-hover);
+    color: white;
+}
+
+.nav-link.active {
+    background: rgba(139, 92, 246, 0.1);
+    border-left-color: var(--brand);
+    color: var(--brand-light);
+}
+
+.nav-link .icon { font-size: 14px; width: 20px; text-align: center; }
+
+.badge {
+    margin-left: auto;
+    font-size: 9px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.badge-core { background: rgba(139, 92, 246, 0.2); color: var(--brand-light); }
+.badge-new { background: rgba(16, 185, 129, 0.2); color: var(--emerald-light); }
+
+/* Main */
+main {
+    padding: 32px 48px;
+    max-width: 1100px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--panel) 0%, #1a1033 50%, var(--panel) 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: var(--brand-light);
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, var(--brand-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 550px;
+    margin-bottom: 24px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 28px;
+}
+
+.hero-stat-val {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--brand-light);
+}
+
+.hero-stat-lbl {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+/* Sections */
+section { margin-bottom: 48px; }
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 28px 0 14px;
+    color: var(--ink);
+}
+
+h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: var(--brand-light);
+}
+
+p { margin-bottom: 14px; }
+
+/* Cards */
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    border-color: var(--brand);
+    transform: translateY(-2px);
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+}
+
+.card-title { font-size: 1rem; font-weight: 600; }
+.card-sub { font-size: 12px; color: var(--muted); }
+
+/* Grids */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+/* Domain Cards */
+.dom-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.dom-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent, var(--brand));
+}
+
+.dom-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent, var(--brand));
+}
+
+.dom-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+    background: var(--icon-bg, rgba(139, 92, 246, 0.15));
+    color: var(--accent, var(--brand-light));
+}
+
+.dom-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.dom-desc { font-size: 13px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+
+.dom-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.dom-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--muted);
+    font-weight: 500;
+}
+
+/* Code */
+pre {
+    background: #050810;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px;
+    overflow-x: auto;
+    margin: 14px 0;
+    position: relative;
+}
+
+pre::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.kw { color: #c792ea; font-weight: 600; }
+.fn { color: #82aaff; }
+.str { color: #c3e88d; }
+.num { color: #f78c6c; }
+.cm { color: #546e7a; font-style: italic; }
+.op { color: #89ddff; }
+.ty { color: #ffcb6b; }
+.prop { color: #f07178; }
+.const { color: #ff5370; }
+.dom { color: #c792ea; font-weight: 700; }
+.ent { color: #ffcb6b; font-weight: 600; }
+.attr { color: #80cbc4; }
+
+code.inline {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--brand-light);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+}
+
+th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    background: var(--panel);
+    color: var(--brand-light);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+tr:hover td { background: rgba(139, 92, 246, 0.05); }
+
+td code {
+    background: rgba(139, 92, 246, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    color: var(--brand-light);
+}
+
+/* Alerts */
+.alert {
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 16px 0;
+    border-left: 4px solid;
+}
+
+.alert-info { background: rgba(6, 182, 212, 0.1); border-color: var(--cyan); }
+.alert-ok { background: rgba(16, 185, 129, 0.1); border-color: var(--emerald); }
+.alert-warn { background: rgba(245, 158, 11, 0.1); border-color: var(--gold); }
+.alert-err { background: rgba(244, 63, 94, 0.1); border-color: var(--rose); }
+
+.alert-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.alert-info .alert-title { color: var(--cyan-light); }
+.alert-ok .alert-title { color: var(--emerald-light); }
+.alert-warn .alert-title { color: var(--gold-light); }
+.alert-err .alert-title { color: var(--rose-light); }
+
+/* Architecture */
+.arch {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-x: auto;
+    color: var(--muted);
+}
+
+.arch .hl { color: var(--brand-light); font-weight: 600; }
+.arch .box { color: var(--cyan-light); }
+.arch .arr { color: var(--gold); }
+
+/* Features */
+.feat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--panel);
+    border-radius: 6px;
+    border: 1px solid var(--line);
+}
+
+.feat-icon { color: var(--emerald); font-size: 14px; margin-top: 2px; }
+.feat-text { font-size: 13px; }
+
+/* JSON Output */
+.json-box {
+    background: #0c0c14;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.json-head {
+    background: var(--panel);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.json-dot { width: 8px; height: 8px; border-radius: 50%; }
+.json-dot.r { background: #ff5f56; }
+.json-dot.y { background: #ffbd2e; }
+.json-dot.g { background: #27c93f; }
+
+.json-title {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.json-body { padding: 16px; overflow-x: auto; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 800px) {
+    .wrap { grid-template-columns: 1fr; }
+    nav.sidebar { display: none; }
+    main { padding: 20px; }
+    .hero { padding: 24px; }
+    .hero h1 { font-size: 2rem; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .feat-grid { grid-template-columns: 1fr; }
+}
+
+section[id] { scroll-margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <a href="#" class="logo">
+            <div class="logo-icon">S</div>
+            <div>
+                <div class="logo-text">Singularis</div>
+                <div class="logo-ver">DSL 5.0</div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="nav-group">
+        <div class="nav-title">Úvod</div>
+        <a href="#overview" class="nav-link"><span class="icon">🎯</span> Přehled</a>
+        <a href="#architecture" class="nav-link"><span class="icon">🏗️</span> Architektura</a>
+        <a href="#philosophy" class="nav-link"><span class="icon">💡</span> Filozofie</a>
+        <a href="#quick-start" class="nav-link"><span class="icon">🚀</span> Quick Start</a>
+    </div>
+    
+    <div class="nav-group">
+        <div class="nav-title">Domény</div>
+        <a href="#model" class="nav-link"><span class="icon">📦</span> @model <span class="badge badge-core">Core</span></a>
+        <a href="#ui" class="nav-link"><span class="icon">🖼️</span> @ui</a>
+        <a href="#workflow" class="nav-link"><span class="icon">⚡</span> @workflow</a>
+        <a href="#security" class="nav-link"><span class="icon">🔐</span> @security <span class="badge badge-core">Core</span></a>
+        <a href="#import" class="nav-link"><span class="icon">📥</span> @import <span class="badge badge-new">New</span></a>
+        <a href="#visual" class="nav-link"><span class="icon">📊</span> @visual</a>
+        <a href="#api" class="nav-link"><span class="icon">🔌</span> @api</a>
+        <a href="#report" class="nav-link"><span class="icon">📄</span> @report</a>
+        <a href="#validation" class="nav-link"><span class="icon">✅</span> @validation</a>
+        <a href="#locale" class="nav-link"><span class="icon">🌍</span> @locale</a>
+        <a href="#audit" class="nav-link"><span class="icon">📝</span> @audit</a>
+        <a href="#notify" class="nav-link"><span class="icon">🔔</span> @notify</a>
+    </div>
+    
+    <div class="nav-group">
+        <div class="nav-title">Reference</div>
+        <a href="#syntax" class="nav-link"><span class="icon">📖</span> Syntaxe</a>
+        <a href="#types" class="nav-link"><span class="icon">🔤</span> Typy</a>
+        <a href="#json" class="nav-link"><span class="icon">📋</span> JSON formáty</a>
+    </div>
+    
+    <div class="nav-group">
+        <div class="nav-title">Pokročilé</div>
+        <a href="#ai" class="nav-link"><span class="icon">🤖</span> AI integrace</a>
+        <a href="#examples" class="nav-link"><span class="icon">💻</span> Příklady</a>
+        <a href="#roadmap" class="nav-link"><span class="icon">🗺️</span> Roadmap</a>
+    </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-badge">✨ Verze 5.0 Draft</div>
+    <h1>Singularis DSL 5.0</h1>
+    <p class="hero-sub">
+        Jednotný deklarativní jazyk pro AI-generování kompletních enterprise aplikací. 
+        Od modelu po UI, workflow, security a vizualizace.
+    </p>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="hero-stat-val">12</div>
+            <div class="hero-stat-lbl">Domén</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-val">1</div>
+            <div class="hero-stat-lbl">Syntaxe</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-val">∞</div>
+            <div class="hero-stat-lbl">Možností</div>
+        </div>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview">
+    <h2>🎯 Přehled</h2>
+    
+    <p>
+        <strong>Singularis DSL 5.0</strong> je meta-framework pro deklarativní definici celých business aplikací. 
+        Namísto psaní kódu v různých jazycích definujete aplikaci v jednotné syntaxi, 
+        kterou lze snadno generovat pomocí AI a validovat pomocí JSON schémat.
+    </p>
+    
+    <div class="alert alert-info">
+        <div class="alert-title">💡 Klíčová myšlenka</div>
+        <p style="margin:0">
+            AI generuje DSL → DSL se kompiluje do JSON → JSON konzumují enginy → 
+            Enginy produkují výstup (kód, UI, dokumenty)
+        </p>
+    </div>
+    
+    <h3>Proč Singularis DSL?</h3>
+    
+    <div class="feat-grid">
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Jeden jazyk</strong> pro celou aplikaci</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>AI-friendly</strong> — ideální pro LLM</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Deklarativní</strong> — méně chyb</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Validovatelný</strong> — JSON Schema</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Versionovatelný</strong> — Git friendly</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Engine-agnostický</strong> — zaměnitelné</span>
+        </div>
+    </div>
+    
+    <h3>12 domén pokrývá celou aplikaci</h3>
+    
+    <div class="grid-4">
+        <div class="dom-card" style="--accent: #8b5cf6; --icon-bg: rgba(139, 92, 246, 0.15);">
+            <div class="dom-icon">📦</div>
+            <div class="dom-title">@model</div>
+            <div class="dom-desc">Entity, relace, ORM</div>
+            <div class="dom-tags"><span class="dom-tag">XPO</span><span class="dom-tag">EF Core</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #3b82f6; --icon-bg: rgba(59, 130, 246, 0.15);">
+            <div class="dom-icon">🖼️</div>
+            <div class="dom-title">@ui</div>
+            <div class="dom-desc">Obrazovky, formuláře</div>
+            <div class="dom-tags"><span class="dom-tag">XAFML</span><span class="dom-tag">DevExpress</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #f59e0b; --icon-bg: rgba(245, 158, 11, 0.15);">
+            <div class="dom-icon">⚡</div>
+            <div class="dom-title">@workflow</div>
+            <div class="dom-desc">BPMN procesy</div>
+            <div class="dom-tags"><span class="dom-tag">ELSA</span><span class="dom-tag">Custom</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #ef4444; --icon-bg: rgba(239, 68, 68, 0.15);">
+            <div class="dom-icon">🔐</div>
+            <div class="dom-title">@security</div>
+            <div class="dom-desc">Role, oprávnění</div>
+            <div class="dom-tags"><span class="dom-tag">XAF Security</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #10b981; --icon-bg: rgba(16, 185, 129, 0.15);">
+            <div class="dom-icon">📥</div>
+            <div class="dom-title">@import</div>
+            <div class="dom-desc">Data mapping, sync</div>
+            <div class="dom-tags"><span class="dom-tag">CSV</span><span class="dom-tag">Excel</span><span class="dom-tag">API</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #06b6d4; --icon-bg: rgba(6, 182, 212, 0.15);">
+            <div class="dom-icon">📊</div>
+            <div class="dom-title">@visual</div>
+            <div class="dom-desc">3D/2D vizualizace</div>
+            <div class="dom-tags"><span class="dom-tag">Three.js</span><span class="dom-tag">SkiaSharp</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #ec4899; --icon-bg: rgba(236, 72, 153, 0.15);">
+            <div class="dom-icon">🔌</div>
+            <div class="dom-title">@api</div>
+            <div class="dom-desc">REST/GraphQL</div>
+            <div class="dom-tags"><span class="dom-tag">ASP.NET</span><span class="dom-tag">OData</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #84cc16; --icon-bg: rgba(132, 204, 22, 0.15);">
+            <div class="dom-icon">📄</div>
+            <div class="dom-title">@report</div>
+            <div class="dom-desc">Tiskové sestavy</div>
+            <div class="dom-tags"><span class="dom-tag">DevExpress</span><span class="dom-tag">PDF</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #f97316; --icon-bg: rgba(249, 115, 22, 0.15);">
+            <div class="dom-icon">✅</div>
+            <div class="dom-title">@validation</div>
+            <div class="dom-desc">Business pravidla</div>
+            <div class="dom-tags"><span class="dom-tag">XAF Validation</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #14b8a6; --icon-bg: rgba(20, 184, 166, 0.15);">
+            <div class="dom-icon">🌍</div>
+            <div class="dom-title">@locale</div>
+            <div class="dom-desc">Překlady, i18n</div>
+            <div class="dom-tags"><span class="dom-tag">Resources</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #6366f1; --icon-bg: rgba(99, 102, 241, 0.15);">
+            <div class="dom-icon">📝</div>
+            <div class="dom-title">@audit</div>
+            <div class="dom-desc">Change tracking</div>
+            <div class="dom-tags"><span class="dom-tag">XAF Audit</span></div>
+        </div>
+        
+        <div class="dom-card" style="--accent: #f43f5e; --icon-bg: rgba(244, 63, 94, 0.15);">
+            <div class="dom-icon">🔔</div>
+            <div class="dom-title">@notify</div>
+            <div class="dom-desc">Emaily, push</div>
+            <div class="dom-tags"><span class="dom-tag">SendGrid</span><span class="dom-tag">Firebase</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+    <h2>🏗️ Architektura</h2>
+    
+    <p>
+        Singularis DSL funguje jako <strong>mezivrstava mezi AI a specializovanými enginy</strong>. 
+        AI generuje jednotný DSL kód, který se kompiluje do doménově specifických JSON formátů.
+    </p>
+    
+    <div class="arch">
+<span class="box">┌─────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="box">│</span>                              <span class="hl">AI (LLM)</span>                                       <span class="box">│</span>
+<span class="box">│</span>           "Vytvoř CRM s workflow schvalování a importem z Excelu"           <span class="box">│</span>
+<span class="box">└─────────────────────────────────────┬───────────────────────────────────────┘</span>
+                                      <span class="arr">│</span>
+                                      <span class="arr">▼</span>
+<span class="box">┌─────────────────────────────────────────────────────────────────────────────┐</span>
+<span class="box">│</span>                        <span class="hl">SINGULARIS DSL 5.0</span>                                   <span class="box">│</span>
+<span class="box">│</span>           Jednotná deklarativní syntaxe pro všechny domény                  <span class="box">│</span>
+<span class="box">├─────────────────────────────────────────────────────────────────────────────┤</span>
+<span class="box">│</span>  @model    @ui    @workflow    @security    @import    @visual    @api     <span class="box">│</span>
+<span class="box">└────┬────────┬─────────┬───────────┬───────────┬──────────┬──────────┬──────┘</span>
+     <span class="arr">│</span>        <span class="arr">│</span>         <span class="arr">│</span>           <span class="arr">│</span>           <span class="arr">│</span>          <span class="arr">│</span>          <span class="arr">│</span>
+     <span class="arr">▼</span>        <span class="arr">▼</span>         <span class="arr">▼</span>           <span class="arr">▼</span>           <span class="arr">▼</span>          <span class="arr">▼</span>          <span class="arr">▼</span>
+<span class="box">┌────────┐┌────────┐┌─────────┐┌──────────┐┌─────────┐┌────────┐┌─────────┐</span>
+<span class="box">│</span>MODEL   <span class="box">││</span>UI      <span class="box">││</span>FLOW     <span class="box">││</span>SECURITY  <span class="box">││</span>IMPORT   <span class="box">││</span>VISUAL  <span class="box">││</span>API      <span class="box">│</span>
+<span class="box">│</span>.json   <span class="box">││</span>.json   <span class="box">││</span>.json    <span class="box">││</span>.json     <span class="box">││</span>.json    <span class="box">││</span>.json   <span class="box">││</span>.json    <span class="box">│</span>
+<span class="box">└───┬────┘└───┬────┘└────┬────┘└─────┬────┘└────┬────┘└───┬────┘└────┬────┘</span>
+    <span class="arr">│</span>         <span class="arr">│</span>          <span class="arr">│</span>           <span class="arr">│</span>           <span class="arr">│</span>          <span class="arr">│</span>          <span class="arr">│</span>
+    <span class="arr">▼</span>         <span class="arr">▼</span>          <span class="arr">▼</span>           <span class="arr">▼</span>           <span class="arr">▼</span>          <span class="arr">▼</span>          <span class="arr">▼</span>
+<span class="box">┌────────┐┌────────┐┌─────────┐┌──────────┐┌─────────┐┌────────┐┌─────────┐</span>
+<span class="box">│</span><span class="hl">XPO/EF</span>  <span class="box">││</span><span class="hl">XAFML</span>   <span class="box">││</span><span class="hl">Workflow</span> <span class="box">││</span><span class="hl">XAF</span>       <span class="box">││</span><span class="hl">Import</span>   <span class="box">││</span><span class="hl">Three.js</span><span class="box">││</span><span class="hl">ASP.NET</span>  <span class="box">│</span>
+<span class="box">│</span>Core    <span class="box">││</span>DevEx   <span class="box">││</span>Engine   <span class="box">││</span>Security  <span class="box">││</span>Engine   <span class="box">││</span>Skia    <span class="box">││</span>OData    <span class="box">│</span>
+<span class="box">└────────┘└────────┘└─────────┘└──────────┘└─────────┘└────────┘└─────────┘</span>
+    </div>
+    
+    <h3>Tok dat</h3>
+    
+    <div class="grid-3">
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--brand-light);">1</div>
+                <div>
+                    <div class="card-title">DSL definice</div>
+                    <div class="card-sub">Vstup od AI nebo vývojáře</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                Deklarativní popis požadované funkcionality v jednotné syntaxi.
+            </p>
+        </div>
+        
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light);">2</div>
+                <div>
+                    <div class="card-title">JSON kompilace</div>
+                    <div class="card-sub">Validace a transformace</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                DSL parser kompiluje do doménově specifických JSON formátů.
+            </p>
+        </div>
+        
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-light);">3</div>
+                <div>
+                    <div class="card-title">Engine execution</div>
+                    <div class="card-sub">Generování výstupu</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                Enginy konzumují JSON a produkují kód, UI nebo vizualizace.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+    <h2>💡 Filozofie návrhu</h2>
+    
+    <div class="grid-2">
+        <div class="alert alert-ok">
+            <div class="alert-title">✅ Deklarativní před imperativním</div>
+            <p style="margin: 0; font-size: 13px;">
+                Popisujeme CO chceme, ne JAK to udělat.
+            </p>
+        </div>
+        
+        <div class="alert alert-ok">
+            <div class="alert-title">✅ Jednoduchost před flexibilitou</div>
+            <p style="margin: 0; font-size: 13px;">
+                80% use-cases snadno, 20% s escape hatch.
+            </p>
+        </div>
+        
+        <div class="alert alert-ok">
+            <div class="alert-title">✅ Konzistence napříč doménami</div>
+            <p style="margin: 0; font-size: 13px;">
+                Naučíš se jednou, použiješ všude.
+            </p>
+        </div>
+        
+        <div class="alert alert-ok">
+            <div class="alert-title">✅ AI-first design</div>
+            <p style="margin: 0; font-size: 13px;">
+                Syntaxe optimalizovaná pro LLM generování.
+            </p>
+        </div>
+    </div>
+    
+    <h3>Základní syntaktický vzor</h3>
+    
+    <pre data-lang="DSL"><code><span class="cm">// Každá definice má stejnou strukturu</span>
+<span class="dom">@doména</span> <span class="ent">NázevDefinice</span> {
+    <span class="cm">// Metadata (volitelný)</span>
+    <span class="kw">meta</span> {
+        <span class="attr">caption</span>: <span class="str">"Lidský název"</span>
+        <span class="attr">icon</span>: <span class="str">"ikona"</span>
+    }
+    
+    <span class="cm">// Hlavní bloky</span>
+    <span class="kw">blok</span> {
+        <span class="prop">vlastnost</span>: <span class="ty">typ</span>, <span class="attr">constraint</span>
+    }
+    
+    <span class="cm">// Reference</span>
+    <span class="kw">relations</span> {
+        <span class="prop">Rel</span> <span class="op">-></span> <span class="ent">Target</span>, <span class="attr">one-to-many</span>
+    }
+    
+    <span class="cm">// Podmínky</span>
+    <span class="kw">when</span> (<span class="prop">condition</span>) { ... }
+}</code></pre>
+</section>
+
+<!-- QUICK START -->
+<section id="quick-start">
+    <h2>🚀 Quick Start</h2>
+    
+    <p>Vytvořme aplikaci pro správu zákazníků za 5 minut.</p>
+    
+    <h3>1. Model</h3>
+    
+    <pre data-lang="DSL"><code><span class="dom">@model</span> <span class="ent">Customer</span> {
+    <span class="kw">meta</span> { <span class="attr">caption</span>: <span class="str">"Zákazník"</span>, <span class="attr">icon</span>: <span class="str">"user"</span> }
+    
+    <span class="kw">props</span> {
+        <span class="prop">Id</span>: <span class="ty">guid</span>, <span class="attr">key</span>, <span class="attr">auto</span>
+        <span class="prop">Name</span>: <span class="ty">string</span>(<span class="num">100</span>), <span class="attr">required</span>, <span class="attr">searchable</span>
+        <span class="prop">Email</span>: <span class="ty">string</span>(<span class="num">255</span>), <span class="fn">format</span>(<span class="str">email</span>), <span class="attr">unique</span>
+        <span class="prop">IsActive</span>: <span class="ty">bool</span>, <span class="fn">default</span>(<span class="const">true</span>)
+    }
+    
+    <span class="kw">relations</span> {
+        <span class="prop">Orders</span> <span class="op">-></span> <span class="ent">Order</span>[], <span class="attr">one-to-many</span>
+    }
+}
+
+<span class="dom">@model</span> <span class="ent">Order</span> {
+    <span class="kw">props</span> {
+        <span class="prop">Id</span>: <span class="ty">guid</span>, <span class="attr">key</span>, <span class="attr">auto</span>
+        <span class="prop">Number</span>: <span class="ty">string</span>(<span class="num">20</span>), <span class="attr">unique</span>, <span class="fn">auto</span>(<span class="fn">sequence</span>(<span class="str">"ORD-{yyyy}-{####}"</span>))
+        <span class="prop">Amount</span>: <span class="ty">decimal</span>(<span class="num">18</span>,<span class="num">2</span>), <span class="attr">required</span>
+        <span class="prop">Status</span>: <span class="ty">OrderStatus</span>, <span class="fn">default</span>(<span class="const">Draft</span>)
+    }
+    
+    <span class="kw">relations</span> {
+        <span class="prop">Customer</span> <span class="op">-></span> <span class="ent">Customer</span>, <span class="attr">many-to-one</span>, <span class="attr">required</span>
+    }
+}
+
+<span class="dom">@enum</span> <span class="ent">OrderStatus</span> { <span class="const">Draft</span>=<span class="num">0</span>, <span class="const">Submitted</span>=<span class="num">1</span>, <span class="const">Approved</span>=<span class="num">2</span>, <span class="const">Completed</span>=<span class="num">3</span> }</code></pre>
+
+    <h3>2. UI</h3>
+    
+    <pre data-lang="DSL"><code><span class="dom">@ui</span> <span class="ent">CustomerList</span> {
+    <span class="kw">type</span>: <span class="const">list-view</span>
+    <span class="kw">model</span>: <span class="ent">Customer</span>
+    
+    <span class="kw">layout</span> {
+        <span class="kw">toolbar</span> {
+            <span class="kw">button</span> <span class="ent">New</span> { <span class="attr">action</span>: <span class="fn">create</span>, <span class="attr">icon</span>: <span class="str">"plus"</span> }
+            <span class="kw">search</span> { <span class="attr">fields</span>: [<span class="prop">Name</span>, <span class="prop">Email</span>] }
+        }
+        
+        <span class="kw">grid</span> {
+            <span class="kw">columns</span> {
+                <span class="prop">Name</span> { <span class="attr">width</span>: <span class="num">200</span>, <span class="attr">link</span>: <span class="const">detail</span> }
+                <span class="prop">Email</span> { <span class="attr">width</span>: <span class="num">200</span> }
+                <span class="prop">IsActive</span> { <span class="attr">width</span>: <span class="num">80</span>, <span class="attr">toggle</span> }
+            }
+        }
+    }
+}</code></pre>
+
+    <h3>3. Security</h3>
+    
+<!-- DOMAIN: @model -->
+<section id="model">
+    <h2>📦 @model — Entity & Relace</h2>
+    
+    <p>
+        Doména <code class="inline">@model</code> definuje datový model aplikace — entity, vlastnosti, 
+        relace a indexy. Výstup konzumuje XPO nebo Entity Framework Core.
+    </p>
+    
+    <div class="alert alert-info">
+        <div class="alert-title">📋 Výstup</div>
+        <p style="margin: 0;">model.json → XPO / EF Core třídy</p>
+    </div>
+    
+    <h3>Kompletní syntaxe</h3>
+    
+    <pre data-lang="DSL"><code><span class="dom">@model</span> <span class="ent">EntityName</span> {
+    <span class="cm">// META</span>
+    <span class="kw">meta</span> {
+        <span class="attr">table</span>: <span class="str">"TableName"</span>
+        <span class="attr">schema</span>: <span class="str">"dbo"</span>
+        <span class="attr">caption</span>: <span class="str">"Lidský název"</span>
+        <span class="attr">icon</span>: <span class="str">"icon-name"</span>
+        <span class="attr">auditable</span>: <span class="const">true</span>
+    }
+    
+    <span class="cm">// PROPS</span>
+    <span class="kw">props</span> {
+        <span class="prop">Id</span>: <span class="ty">guid</span>, <span class="attr">key</span>, <span class="attr">auto</span>
+        <span class="prop">Name</span>: <span class="ty">string</span>(<span class="num">100</span>), <span class="attr">required</span>
+        <span class="prop">Email</span>: <span class="ty">string</span>(<span class="num">255</span>), <span class="attr">unique</span>, <span class="fn">format</span>(<span class="str">email</span>)
+        <span class="prop">Age</span>: <span class="ty">int</span>, <span class="fn">range</span>(<span class="num">0</span>, <span class="num">150</span>)
+        <span class="prop">Price</span>: <span class="ty">decimal</span>(<span class="num">18</span>,<span class="num">2</span>)
+        <span class="prop">IsActive</span>: <span class="ty">bool</span>, <span class="fn">default</span>(<span class="const">true</span>)
+        <span class="prop">Created</span>: <span class="ty">datetime</span>, <span class="fn">auto</span>(<span class="fn">now</span>)
+        <span class="prop">Status</span>: <span class="ty">OrderStatus</span>          <span class="cm">// Enum</span>
+        
+        <span class="cm">// Computed</span>
+        <span class="prop">FullName</span>: <span class="ty">string</span>, <span class="fn">computed</span>(<span class="str">"${FirstName} ${LastName}"</span>)
+        <span class="prop">Total</span>: <span class="ty">decimal</span>, <span class="fn">computed</span>(<span class="fn">sum</span>(<span class="prop">Lines</span>, <span class="prop">Amount</span>))
+    }
+    
+    <span class="cm">// RELATIONS</span>
+    <span class="kw">relations</span> {
+        <span class="prop">Customer</span> <span class="op">-></span> <span class="ent">Customer</span>, <span class="attr">many-to-one</span>, <span class="attr">required</span>
+        <span class="prop">Orders</span> <span class="op">-></span> <span class="ent">Order</span>[], <span class="attr">one-to-many</span>
+        <span class="prop">Lines</span> <span class="op">-></span> <span class="ent">OrderLine</span>[], <span class="attr">one-to-many</span>, <span class="attr">cascade-delete</span>
+        <span class="prop">Tags</span> <span class="op">-></span> <span class="ent">Tag</span>[], <span class="attr">many-to-many</span>
+        <span class="prop">Address</span> <span class="op">-></span> <span class="ent">Address</span>, <span class="attr">one-to-one</span>, <span class="attr">embedded</span>
+    }
+    
+    <span class="cm">// INDEXES</span>
+    <span class="kw">indexes</span> {
+        <span class="prop">idx_email</span>: [<span class="prop">Email</span>], <span class="attr">unique</span>
+        <span class="prop">idx_name_active</span>: [<span class="prop">Name</span>, <span class="prop">IsActive</span>]
+    }
+    
+    <span class="cm">// INHERITANCE</span>
+    <span class="kw">extends</span>: <span class="ent">BaseEntity</span>
+}</code></pre>
+
+    <h3>Datové typy</h3>
+    
+    <table>
+        <tr><th>Typ</th><th>Popis</th><th>C# ekvivalent</th></tr>
+        <tr><td><code>string(n)</code></td><td>Text s max délkou</td><td><code>string</code></td></tr>
+        <tr><td><code>text</code></td><td>Neomezený text</td><td><code>string</code></td></tr>
+        <tr><td><code>int</code></td><td>Celé číslo 32bit</td><td><code>int</code></td></tr>
+        <tr><td><code>long</code></td><td>Celé číslo 64bit</td><td><code>long</code></td></tr>
+        <tr><td><code>decimal(p,s)</code></td><td>Přesné desetinné</td><td><code>decimal</code></td></tr>
+        <tr><td><code>bool</code></td><td>Boolean</td><td><code>bool</code></td></tr>
+        <tr><td><code>datetime</code></td><td>Datum a čas</td><td><code>DateTime</code></td></tr>
+        <tr><td><code>date</code></td><td>Pouze datum</td><td><code>DateOnly</code></td></tr>
+        <tr><td><code>guid</code></td><td>UUID</td><td><code>Guid</code></td></tr>
+        <tr><td><code>blob</code></td><td>Binární data</td><td><code>byte[]</code></td></tr>
+    </table>
+    
+    <h3>Constraints</h3>
+    
+    <table>
+        <tr><th>Constraint</th><th>Popis</th></tr>
+        <tr><td><code>key</code></td><td>Primární klíč</td></tr>
+        <tr><td><code>auto</code></td><td>Auto-generované</td></tr>
+        <tr><td><code>required</code></td><td>Povinné pole</td></tr>
+        <tr><td><code>nullable</code></td><td>Může být NULL</td></tr>
+        <tr><td><code>unique</code></td><td>Unikátní hodnota</td></tr>
+        <tr><td><code>index</code></td><td>Indexované pole</td></tr>
+        <tr><td><code>searchable</code></td><td>Full-text search</td></tr>
+        <tr><td><code>default(v)</code></td><td>Výchozí hodnota</td></tr>
+        <tr><td><code>range(min,max)</code></td><td>Rozsah hodnot</td></tr>
+        <tr><td><code>format(f)</code></td><td>Formát (email, url, phone)</td></tr>
+        <tr><td><code>computed(expr)</code></td><td>Vypočítaná hodnota</td></tr>
+    </table>
+</section>
+
+<!-- DOMAIN: @ui -->
+<section id="ui">
+    <h2>🖼️ @ui — Obrazovky & Formuláře</h2>
+    
+    <p>
+        Doména <code class="inline">@ui</code> definuje uživatelské rozhraní — seznamy, detaily, 
+        formuláře, toolbary a layouty.
+    </p>
+    
+    <h3>List View</h3>
+    
+    <pre data-lang="DSL"><code><span class="dom">@ui</span> <span class="ent">CustomerList</span> {
+    <span class="kw">type</span>: <span class="const">list-view</span>
+    <span class="kw">model</span>: <span class="ent">Customer</span>
+    
+    <span class="kw">layout</span> {
+        <span class="kw">toolbar</span> {
+            <span class="kw">button</span> <span class="ent">New</span> { <span class="attr">action</span>: <span class="fn">create</span>, <span class="attr">icon</span>: <span class="str">"plus"</span>, <span class="attr">style</span>: <span class="const">primary</span> }
+            <span class="kw">button</span> <span class="ent">Import</span> { <span class="attr">action</span>: <span class="fn">open</span>(<span class="ent">CustomerImport</span>), <span class="attr">icon</span>: <span class="str">"upload"</span> }
+            <span class="kw">button</span> <span class="ent">Export</span> { <span class="attr">action</span>: <span class="fn">export</span>(<span class="const">xlsx</span>), <span class="attr">icon</span>: <span class="str">"download"</span> }
+            
+            <span class="kw">separator</span>
+            
+            <span class="kw">search</span> { <span class="attr">fields</span>: [<span class="prop">Name</span>, <span class="prop">Email</span>, <span class="prop">TaxId</span>] }
+            <span class="kw">filter</span> <span class="ent">Type</span> { <span class="attr">field</span>: <span class="prop">Type</span>, <span class="attr">multi</span>: <span class="const">true</span> }
+            <span class="kw">filter</span> <span class="ent">Active</span> { <span class="attr">field</span>: <span class="prop">IsActive</span>, <span class="attr">default</span>: <span class="const">true</span> }
+        }
+        
+        <span class="kw">grid</span> {
+            <span class="attr">selectable</span>: <span class="const">multi</span>
+            
+            <span class="kw">columns</span> {
+                <span class="prop">Name</span> { <span class="attr">width</span>: <span class="num">200</span>, <span class="attr">sortable</span>, <span class="attr">link</span>: <span class="const">detail</span>, <span class="attr">frozen</span> }
+                <span class="prop">Email</span> { <span class="attr">width</span>: <span class="num">250</span> }
+                <span class="prop">Type</span> { <span class="attr">width</span>: <span class="num">120</span>, <span class="attr">display</span>: <span class="const">badge</span> }
+                <span class="prop">CreditLimit</span> { <span class="attr">width</span>: <span class="num">120</span>, <span class="attr">format</span>: <span class="const">currency</span>, <span class="attr">align</span>: <span class="const">right</span> }
+                <span class="prop">IsActive</span> { <span class="attr">width</span>: <span class="num">80</span>, <span class="attr">display</span>: <span class="const">toggle</span>, <span class="attr">editable</span> }
+            }
+            
+            <span class="kw">row-actions</span> {
+                <span class="kw">action</span> <span class="ent">Edit</span> { <span class="attr">icon</span>: <span class="str">"edit"</span>, <span class="attr">action</span>: <span class="fn">edit</span> }
+                <span class="kw">action</span> <span class="ent">Delete</span> { <span class="attr">icon</span>: <span class="str">"trash"</span>, <span class="attr">action</span>: <span class="fn">delete</span>, <span class="attr">confirm</span>: <span class="const">true</span> }
+            }
+        }
+        
+        <span class="kw">pagination</span> { <span class="attr">page-size</span>: <span class="num">25</span>, <span class="attr">options</span>: [<span class="num">10</span>, <span class="num">25</span>, <span class="num">50</span>, <span class="num">100</span>] }
+    }
+}</code></pre>
+
+    <h3>Detail View</h3>
+    
+    <pre data-lang="DSL"><code><span class="dom">@ui</span> <span class="ent">CustomerDetail</span> {
+    <span class="kw">type</span>: <span class="const">detail-view</span>
+    <span class="kw">model</span>: <span class="ent">Customer</span>
+    
+    <span class="kw">layout</span> {
+        <span class="kw">header</span> {
+            <span class="attr">title</span>: <span class="str">"{Name}"</span>
+            <span class="attr">subtitle</span>: <span class="str">"IČO: {TaxId}"</span>
+            <span class="attr">badge</span>: <span class="prop">Type</span>
+        }
+        
+        <span class="kw">tabs</span> {
+            <span class="kw">tab</span> <span class="str">"Základní"</span> {
+                <span class="kw">section</span> <span class="str">"Identifikace"</span> {
+                    <span class="attr">columns</span>: <span class="num">2</span>
+                    <span class="kw">row</span> { <span class="prop">Name</span> { <span class="attr">span</span>: <span class="num">2</span> } }
+                    <span class="kw">row</span> { <span class="prop">TaxId</span>, <span class="prop">VatId</span> }
+                    <span class="kw">row</span> { <span class="prop">Email</span>, <span class="prop">Phone</span> }
+                }
+                
+                <span class="kw">section</span> <span class="str">"Nastavení"</span> {
+                    <span class="kw">row</span> { <span class="prop">Type</span>, <span class="prop">CreditLimit</span> }
+                    <span class="kw">row</span> { <span class="prop">IsActive</span> { <span class="attr">display</span>: <span class="const">switch</span> } }
+                }
+            }
+            
+            <span class="kw">tab</span> <span class="str">"Adresa"</span> {
+                <span class="kw">embed</span>: <span class="ent">AddressForm</span>
+                <span class="attr">source</span>: <span class="prop">Address</span>
+            }
+            
+            <span class="kw">tab</span> <span class="str">"Objednávky"</span> {
+                <span class="attr">badge</span>: <span class="prop">OrderCount</span>
+                <span class="kw">nested-list</span>: <span class="ent">OrderList</span>
+                <span class="attr">source</span>: <span class="prop">Orders</span>
+                <span class="attr">filter</span>: { <span class="prop">Customer</span>: <span class="const">$current</span> }
+            }
+            
+            <span class="kw">tab</span> <span class="str">"Historie"</span> {
+                <span class="kw">audit-log</span>: <span class="const">true</span>
+            }
+        }
+        
+        <span class="kw">footer</span> {
+            <span class="kw">button</span> <span class="ent">Save</span> { <span class="attr">action</span>: <span class="fn">save</span>, <span class="attr">style</span>: <span class="const">primary</span>, <span class="attr">shortcut</span>: <span class="str">"Ctrl+S"</span> }
+            <span class="kw">button</span> <span class="ent">Cancel</span> { <span class="attr">action</span>: <span class="fn">cancel</span> }
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @workflow -->
+<section id="workflow">
+    <h2>⚡ @workflow — BPMN Procesy</h2>
+    
+    <p>
+        Doména <code class="inline">@workflow</code> definuje business procesy — schvalovací workflow, 
+        automatizace, notifikace a eskalace.
+    </p>
+    
+    <pre data-lang="DSL"><code><span class="dom">@workflow</span> <span class="ent">OrderApproval</span> {
+    <span class="kw">meta</span> {
+        <span class="attr">caption</span>: <span class="str">"Schvalování objednávek"</span>
+    }
+    
+    <span class="cm">// Kdy se spustí</span>
+    <span class="kw">trigger</span> {
+        <span class="attr">on</span>: <span class="ent">Order</span>
+        <span class="attr">event</span>: <span class="const">on-change</span>(<span class="prop">Status</span>)
+        <span class="attr">when</span>: <span class="prop">Status</span> = <span class="const">Submitted</span>
+    }
+    
+    <span class="cm">// Účastníci</span>
+    <span class="kw">participants</span> {
+        <span class="prop">requester</span>: <span class="fn">role</span>(<span class="const">Sales</span>)
+        <span class="prop">approver</span>: <span class="fn">role</span>(<span class="const">Manager</span>)
+        <span class="prop">director</span>: <span class="fn">role</span>(<span class="const">Director</span>)
+    }
+    
+    <span class="cm">// Proces</span>
+    <span class="kw">flow</span> {
+        <span class="const">start</span> <span class="op">-></span> <span class="ent">CheckAmount</span>
+        
+        <span class="ent">CheckAmount</span>: <span class="kw">gateway</span>(<span class="const">exclusive</span>) {
+            <span class="kw">when</span> (<span class="prop">Amount</span> < <span class="num">10000</span>) <span class="op">-></span> <span class="ent">AutoApprove</span>
+            <span class="kw">when</span> (<span class="prop">Amount</span> < <span class="num">50000</span>) <span class="op">-></span> <span class="ent">ManagerApproval</span>
+            <span class="kw">else</span> <span class="op">-></span> <span class="ent">DirectorApproval</span>
+        }
+        
+        <span class="ent">AutoApprove</span>: <span class="kw">task</span>(<span class="const">automatic</span>) {
+            <span class="kw">actions</span> {
+                <span class="fn">set</span>(<span class="prop">Status</span> = <span class="const">Approved</span>)
+                <span class="fn">set</span>(<span class="prop">ApprovedAt</span> = <span class="fn">now</span>())
+            }
+            <span class="op">-></span> <span class="ent">SendConfirmation</span>
+        }
+        
+        <span class="ent">ManagerApproval</span>: <span class="kw">task</span>(<span class="const">user</span>) {
+            <span class="attr">assignee</span>: <span class="prop">approver</span>
+            <span class="attr">form</span>: <span class="ent">ApprovalForm</span>
+            <span class="attr">timeout</span>: <span class="num">48</span><span class="const">h</span>
+            
+            <span class="kw">on-timeout</span> <span class="op">-></span> <span class="ent">Escalate</span>
+            
+            <span class="kw">outcomes</span> {
+                <span class="const">approve</span> <span class="op">-></span> <span class="ent">SendConfirmation</span>
+                <span class="const">reject</span> <span class="op">-></span> <span class="ent">NotifyRejection</span>
+                <span class="const">return</span> <span class="op">-></span> <span class="ent">RequestChanges</span>
+            }
+        }
+        
+        <span class="ent">Escalate</span>: <span class="kw">task</span>(<span class="const">automatic</span>) {
+            <span class="kw">actions</span> {
+                <span class="fn">notify</span>(<span class="prop">director</span>, <span class="attr">template</span>: <span class="ent">EscalationNotice</span>)
+            }
+            <span class="op">-></span> <span class="ent">DirectorApproval</span>
+        }
+        
+        <span class="ent">SendConfirmation</span>: <span class="kw">task</span>(<span class="const">automatic</span>) {
+            <span class="kw">actions</span> {
+                <span class="fn">set</span>(<span class="prop">Status</span> = <span class="const">Approved</span>)
+                <span class="fn">notify</span>(<span class="prop">requester</span>, <span class="attr">template</span>: <span class="ent">OrderApproved</span>)
+            }
+            <span class="op">-></span> <span class="const">end</span>
+        }
+        
+        <span class="ent">NotifyRejection</span>: <span class="kw">task</span>(<span class="const">automatic</span>) {
+            <span class="kw">actions</span> {
+                <span class="fn">set</span>(<span class="prop">Status</span> = <span class="const">Rejected</span>)
+                <span class="fn">notify</span>(<span class="prop">requester</span>, <span class="attr">template</span>: <span class="ent">OrderRejected</span>)
+            }
+            <span class="op">-></span> <span class="const">end</span>
+        }
+    }
+}
+
+<span class="dom">@form</span> <span class="ent">ApprovalForm</span> {
+    <span class="kw">readonly</span> { <span class="prop">OrderNumber</span>, <span class="prop">Customer.Name</span>, <span class="prop">Amount</span> }
+    <span class="kw">input</span> { <span class="prop">Note</span>: <span class="ty">text</span>, <span class="attr">required</span> }
+    <span class="kw">actions</span> { <span class="const">approve</span>, <span class="const">reject</span>, <span class="const">return</span> }
+}</code></pre>
+
+    <h3>Typy úloh</h3>
+    
+    <table>
+        <tr><th>Typ</th><th>Popis</th></tr>
+        <tr><td><code>task(automatic)</code></td><td>Automatická úloha bez lidského zásahu</td></tr>
+        <tr><td><code>task(user)</code></td><td>Vyžaduje akci uživatele</td></tr>
+        <tr><td><code>task(service)</code></td><td>Volání externí služby/API</td></tr>
+        <tr><td><code>gateway(exclusive)</code></td><td>XOR brána — jedna cesta</td></tr>
+        <tr><td><code>gateway(parallel)</code></td><td>AND brána — všechny paralelně</td></tr>
+    </table>
+</section>
+
+<!-- DOMAIN: @security -->
+<section id="security">
+    <h2>🔐 @security — Role & Oprávnění</h2>
+    
+    <p>
+        Doména <code class="inline">@security</code> definuje RBAC — role, oprávnění, 
+        row-level a field-level security.
+    </p>
+    
+    <div class="alert alert-warn">
+        <div class="alert-title">⚠️ Core doména</div>
+        <p style="margin: 0;">Definujte security vždy na začátku projektu.</p>
+    </div>
+    
+    <pre data-lang="DSL"><code><span class="dom">@security</span> {
+    <span class="cm">// ROLES</span>
+    <span class="kw">roles</span> {
+        <span class="ent">Admin</span> {
+            <span class="attr">caption</span>: <span class="str">"Administrátor"</span>
+            <span class="attr">inherits</span>: [<span class="ent">Manager</span>]
+            <span class="attr">grants</span>: [<span class="const">*.full</span>, <span class="const">System.*</span>, <span class="const">Security.*</span>]
+        }
+        
+        <span class="ent">Manager</span> {
+            <span class="attr">caption</span>: <span class="str">"Manažer"</span>
+            <span class="attr">inherits</span>: [<span class="ent">Sales</span>]
+            <span class="attr">grants</span>: [<span class="const">Order.approve</span>, <span class="const">Customer.delete</span>, <span class="const">Report.*</span>]
+        }
+        
+        <span class="ent">Sales</span> {
+            <span class="attr">caption</span>: <span class="str">"Obchodník"</span>
+            <span class="attr">grants</span>: [<span class="const">Customer.read</span>, <span class="const">Customer.write</span>, <span class="const">Order.*</span>, <span class="const">Product.read</span>]
+            <span class="attr">denies</span>: [<span class="const">Customer.delete</span>, <span class="const">Order.approve</span>]
+        }
+    }
+    
+    <span class="cm">// ROW-LEVEL SECURITY</span>
+    <span class="kw">row-level</span> {
+        <span class="ent">Order</span> {
+            <span class="kw">when</span> <span class="fn">role</span>(<span class="const">Sales</span>) {
+                <span class="attr">filter</span>: <span class="prop">CreatedBy</span> = <span class="const">$currentUser</span>
+            }
+            <span class="kw">when</span> <span class="fn">role</span>(<span class="const">Manager</span>) {
+                <span class="attr">filter</span>: <span class="prop">CreatedBy.Manager</span> = <span class="const">$currentUser</span>
+            }
+        }
+        
+        <span class="ent">Customer</span> {
+            <span class="kw">when</span> <span class="fn">role</span>(<span class="const">Sales</span>) {
+                <span class="attr">filter</span>: <span class="prop">AssignedTo</span> = <span class="const">$currentUser</span> <span class="kw">OR</span> <span class="prop">IsPublic</span> = <span class="const">true</span>
+            }
+        }
+    }
+    
+    <span class="cm">// FIELD-LEVEL SECURITY</span>
+    <span class="kw">field-level</span> {
+        <span class="ent">Customer</span>.<span class="prop">CreditLimit</span> {
+            <span class="attr">read</span>: [<span class="const">Manager</span>, <span class="const">Finance</span>, <span class="const">Admin</span>]
+            <span class="attr">write</span>: [<span class="const">Finance</span>, <span class="const">Admin</span>]
+        }
+        
+        <span class="ent">Order</span>.<span class="prop">Margin</span> {
+            <span class="attr">read</span>: [<span class="const">Manager</span>, <span class="const">Admin</span>]
+            <span class="attr">write</span>: <span class="const">never</span>
+        }
+        
+        <span class="ent">Employee</span>.<span class="prop">Salary</span> {
+            <span class="attr">read</span>: [<span class="const">HR</span>, <span class="const">Admin</span>, <span class="const">$self</span>]
+            <span class="attr">write</span>: [<span class="const">HR</span>, <span class="const">Admin</span>]
+        }
+    }
+}</code></pre>
+
+    <h3>Typy oprávnění</h3>
+    
+    <table>
+        <tr><th>Oprávnění</th><th>Popis</th></tr>
+        <tr><td><code>Entity.read</code></td><td>Čtení záznamů</td></tr>
+        <tr><td><code>Entity.create</code></td><td>Vytváření záznamů</td></tr>
+        <tr><td><code>Entity.write</code></td><td>Úprava záznamů</td></tr>
+        <tr><td><code>Entity.delete</code></td><td>Mazání záznamů</td></tr>
+        <tr><td><code>Entity.full</code></td><td>Všechna CRUD oprávnění</td></tr>
+        <tr><td><code>Entity.*</code></td><td>Vše včetně custom</td></tr>
+        <tr><td><code>*.full</code></td><td>Plný přístup ke všemu</td></tr>
+    </table>
+</section>
+
+<!-- DOMAIN: @import -->
+<section id="import">
+    <h2>📥 @import — Data Mapping & Sync</h2>
+    
+    <p>
+        Doména <code class="inline">@import</code> definuje mapování externích dat na entity.
+        Řeší všechny edge-cases: nové záznamy, aktualizace, konflikty, chybějící hodnoty.
+    </p>
+    
+    <div class="alert alert-ok">
+        <div class="alert-title">🆕 Nová doména v 5.0</div>
+        <p style="margin: 0;">Kritická součást každé business aplikace.</p>
+    </div>
+    
+    <pre data-lang="DSL"><code><span class="dom">@import</span> <span class="ent">CustomerImport</span> {
+    <span class="kw">meta</span> { <span class="attr">caption</span>: <span class="str">"Import zákazníků"</span> }
+    
+    <span class="cm">// ZDROJ</span>
+    <span class="kw">source</span> {
+        <span class="attr">type</span>: <span class="const">xlsx</span>                    <span class="cm">// csv, xlsx, json, xml, api</span>
+        <span class="attr">sheets</span>: [<span class="str">"Zákazníci"</span>, <span class="str">"Sheet1"</span>]
+        <span class="attr">header-row</span>: <span class="num">1</span>
+        <span class="attr">data-start</span>: <span class="num">2</span>
+    }
+    
+    <span class="cm">// CÍL</span>
+    <span class="kw">target</span>: <span class="ent">Customer</span>
+    
+    <span class="cm">// MATCH - jak najít existující</span>
+    <span class="kw">match</span> {
+        <span class="attr">keys</span>: [<span class="prop">source.ICO</span> <span class="op">-></span> <span class="prop">TaxId</span>]
+        <span class="attr">strategy</span>: <span class="const">first</span>
+    }
+    
+    <span class="cm">// MAPPING</span>
+    <span class="kw">mapping</span> {
+        <span class="prop">source.Název</span>        <span class="op">-></span> <span class="prop">Name</span>           : <span class="fn">trim</span>
+        <span class="prop">source.IČO</span>          <span class="op">-></span> <span class="prop">TaxId</span>          : <span class="fn">trim</span>, <span class="attr">required</span>
+        <span class="prop">source.Email</span>        <span class="op">-></span> <span class="prop">Email</span>          : <span class="fn">lowercase</span>, <span class="fn">validate</span>(<span class="const">email</span>)
+        <span class="prop">source.Telefon</span>      <span class="op">-></span> <span class="prop">Phone</span>          : <span class="fn">normalize-phone</span>(<span class="str">"+420"</span>)
+        <span class="prop">source.Typ</span>          <span class="op">-></span> <span class="prop">Type</span>           : <span class="fn">lookup</span>(<span class="ty">CustomerType</span>, <span class="prop">Name</span>)
+        <span class="prop">source.Kredit</span>       <span class="op">-></span> <span class="prop">CreditLimit</span>    : <span class="fn">parse-decimal</span>, <span class="fn">default</span>(<span class="num">0</span>)
+        <span class="prop">source.Aktivní</span>      <span class="op">-></span> <span class="prop">IsActive</span>       : <span class="fn">parse-bool</span>([<span class="str">"ano"</span>], [<span class="str">"ne"</span>])
+        
+        <span class="cm">// Vnořené</span>
+        <span class="prop">source.Ulice</span>        <span class="op">-></span> <span class="prop">Address.Street</span>
+        <span class="prop">source.Město</span>        <span class="op">-></span> <span class="prop">Address.City</span>
+        
+        <span class="cm">// Vazby</span>
+        <span class="prop">source.Manažer</span>      <span class="op">-></span> <span class="prop">Manager</span>        : <span class="fn">lookup</span>(<span class="ent">Employee</span>, <span class="prop">FullName</span>)
+        <span class="prop">source.Štítky</span>       <span class="op">-></span> <span class="prop">Tags</span>           : <span class="fn">split</span>(<span class="str">";"</span>), <span class="fn">lookup-or-create</span>(<span class="ent">Tag</span>, <span class="prop">Name</span>)
+        
+        <span class="cm">// Konstanty</span>
+        <span class="str">"Excel Import"</span>      <span class="op">-></span> <span class="prop">Source</span>
+        <span class="const">$now</span>                <span class="op">-></span> <span class="prop">ImportedAt</span>
+        <span class="const">$currentUser</span>        <span class="op">-></span> <span class="prop">ImportedBy</span>
+    }
+    
+    <span class="cm">// BEHAVIORS</span>
+    <span class="kw">behaviors</span> {
+        <span class="kw">on-match</span> {
+            <span class="attr">action</span>: <span class="const">update</span>
+            <span class="attr">fields</span>: [<span class="prop">Name</span>, <span class="prop">Email</span>, <span class="prop">Phone</span>, <span class="prop">Address.*</span>]
+            <span class="attr">preserve</span>: [<span class="prop">TaxId</span>, <span class="prop">CreatedAt</span>]
+            
+            <span class="kw">conflicts</span> {
+                <span class="prop">Email</span>: <span class="const">source-wins</span>
+                <span class="prop">CreditLimit</span>: <span class="const">higher-wins</span>
+            }
+        }
+        
+        <span class="kw">on-new</span> {
+            <span class="attr">action</span>: <span class="const">create</span>
+            <span class="kw">defaults</span> { <span class="prop">Type</span>: <span class="const">Standard</span>, <span class="prop">IsActive</span>: <span class="const">true</span> }
+        }
+        
+        <span class="kw">on-missing-in-source</span> {
+            <span class="attr">action</span>: <span class="const">mark</span>
+            <span class="attr">set</span>: <span class="prop">IsActive</span> = <span class="const">false</span>
+        }
+        
+        <span class="kw">on-null</span> {
+            <span class="prop">Email</span>: <span class="const">skip</span>
+            <span class="prop">Phone</span>: <span class="const">keep-existing</span>
+            <span class="prop">Name</span>: <span class="const">error</span>(<span class="str">"Název je povinný"</span>)
+        }
+        
+        <span class="kw">on-lookup-failed</span> {
+            <span class="prop">Manager</span>: <span class="const">null</span>
+            <span class="prop">Tags</span>: <span class="const">create-new</span>
+        }
+    }
+    
+    <span class="cm">// VALIDACE</span>
+    <span class="kw">validation</span> {
+        <span class="prop">source.IČO</span>: <span class="fn">regex</span>(<span class="str">"^\\d{8}$"</span>)
+        <span class="prop">source.Email</span>: <span class="fn">email-format</span>
+    }
+    
+    <span class="cm">// TRANSAKCE</span>
+    <span class="kw">transaction</span> {
+        <span class="attr">mode</span>: <span class="const">batch</span>
+        <span class="attr">batch-size</span>: <span class="num">100</span>
+        <span class="attr">on-error</span>: <span class="const">rollback-batch</span>
+    }
+}</code></pre>
+
+    <h3>Transformační funkce</h3>
+    
+    <table>
+        <tr><th>Funkce</th><th>Popis</th></tr>
+        <tr><td><code>trim</code></td><td>Odstranění mezer</td></tr>
+        <tr><td><code>lowercase</code></td><td>Na malá písmena</td></tr>
+        <tr><td><code>parse-int</code></td><td>Parsování celého čísla</td></tr>
+        <tr><td><code>parse-decimal</code></td><td>Parsování desetinného čísla</td></tr>
+        <tr><td><code>parse-date(fmt)</code></td><td>Parsování data</td></tr>
+        <tr><td><code>parse-bool(t,f)</code></td><td>Parsování boolean</td></tr>
+        <tr><td><code>default(v)</code></td><td>Výchozí hodnota</td></tr>
+        <tr><td><code>lookup(E,F)</code></td><td>Vyhledání vazby</td></tr>
+        <tr><td><code>split(d)</code></td><td>Rozdělení na pole</td></tr>
+        <tr><td><code>normalize-phone(p)</code></td><td>Normalizace telefonu</td></tr>
+        <tr><td><code>validate(r)</code></td><td>Validace formátu</td></tr>
+    </table>
+</section>
+<!-- DOMAIN: @visual -->
+<section id="visual">
+    <h2>📊 @visual — 3D/2D Vizualizace</h2>
+    
+    <p>
+        Doména <code class="inline">@visual</code> definuje vizualizace — grafy, diagramy, animované scény.
+        Vychází z SGL 3.0.
+    </p>
+    
+    <pre data-lang="DSL"><code><span class="dom">@visual</span> <span class="ent">BipartiteGraph</span> {
+    <span class="kw">meta</span> { <span class="attr">engine</span>: <span class="const">three.js</span>, <span class="attr">type</span>: <span class="const">3d</span> }
+    
+    <span class="kw">scene</span> {
+        <span class="attr">background</span>: <span class="str">"#0f172a"</span>
+        <span class="attr">camera</span>: <span class="const">orthographic</span>
+    }
+    
+    <span class="kw">points</span> <span class="ent">suppliers</span> {
+        <span class="attr">data</span>: <span class="str">"$.suppliers[*]"</span>
+        <span class="attr">x</span>: <span class="num">-5</span>
+        <span class="attr">y</span>: <span class="fn">spread</span>(<span class="num">0</span>, <span class="num">10</span>, <span class="attr">by</span>: <span class="const">index</span>)
+        <span class="attr">shape</span>: <span class="const">sphere</span>
+        <span class="attr">size</span>: <span class="num">0.3</span>
+        <span class="attr">color</span>: <span class="str">"#60a5fa"</span>
+        <span class="attr">label</span>: <span class="str">"$.name"</span>
+        
+        <span class="kw">reveal</span> {
+            <span class="attr">delay-by</span>: <span class="const">y</span>
+            <span class="attr">style</span>: <span class="const">fade-scale</span>
+            <span class="attr">duration</span>: <span class="num">0.3</span><span class="const">s</span>
+        }
+    }
+    
+    <span class="kw">points</span> <span class="ent">products</span> {
+        <span class="attr">data</span>: <span class="str">"$.products[*]"</span>
+        <span class="attr">x</span>: <span class="num">5</span>
+        <span class="attr">y</span>: <span class="fn">spread</span>(<span class="num">0</span>, <span class="num">10</span>, <span class="attr">by</span>: <span class="const">index</span>)
+        <span class="attr">color</span>: <span class="str">"#10b981"</span>
+        
+        <span class="kw">reveal</span> {
+            <span class="attr">delay-offset</span>: <span class="num">0.5</span><span class="const">s</span>
+            <span class="attr">style</span>: <span class="const">fade-scale</span>
+        }
+    }
+    
+    <span class="kw">lines</span> <span class="ent">connections</span> {
+        <span class="attr">data</span>: <span class="str">"$.connections[*]"</span>
+        <span class="attr">from</span>: <span class="fn">lookup</span>(<span class="ent">suppliers</span>, <span class="str">"$.source"</span>)
+        <span class="attr">to</span>: <span class="fn">lookup</span>(<span class="ent">products</span>, <span class="str">"$.target"</span>)
+        <span class="attr">color</span>: <span class="str">"#94a3b8"</span>
+        <span class="attr">opacity</span>: <span class="num">0.6</span>
+        
+        <span class="kw">reveal</span> {
+            <span class="attr">delay-offset</span>: <span class="num">1</span><span class="const">s</span>
+            <span class="attr">style</span>: <span class="const">grow</span>
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @api -->
+<section id="api">
+    <h2>🔌 @api — REST/GraphQL Endpointy</h2>
+    
+    <pre data-lang="DSL"><code><span class="dom">@api</span> <span class="ent">CustomerAPI</span> {
+    <span class="kw">base</span>: <span class="str">"/api/v1/customers"</span>
+    <span class="kw">model</span>: <span class="ent">Customer</span>
+    <span class="kw">auth</span>: <span class="const">required</span>
+    
+    <span class="kw">endpoints</span> {
+        <span class="const">GET</span> <span class="str">/</span> {
+            <span class="attr">description</span>: <span class="str">"Seznam zákazníků"</span>
+            <span class="attr">permissions</span>: [<span class="const">Customer.read</span>]
+            
+            <span class="kw">query</span> {
+                <span class="prop">search</span>: <span class="ty">string</span>, <span class="attr">optional</span>
+                <span class="prop">type</span>: <span class="ty">CustomerType</span>, <span class="attr">optional</span>
+                <span class="prop">page</span>: <span class="ty">int</span>, <span class="fn">default</span>(<span class="num">1</span>)
+                <span class="prop">pageSize</span>: <span class="ty">int</span>, <span class="fn">default</span>(<span class="num">25</span>), <span class="fn">max</span>(<span class="num">100</span>)
+            }
+            
+            <span class="attr">response</span>: <span class="fn">paginated</span>(<span class="ent">CustomerListDTO</span>)
+        }
+        
+        <span class="const">GET</span> <span class="str">/:id</span> {
+            <span class="attr">permissions</span>: [<span class="const">Customer.read</span>]
+            <span class="attr">response</span>: <span class="ent">CustomerDetailDTO</span>
+        }
+        
+        <span class="const">POST</span> <span class="str">/</span> {
+            <span class="attr">permissions</span>: [<span class="const">Customer.create</span>]
+            <span class="attr">body</span>: <span class="ent">CustomerCreateDTO</span>
+            <span class="attr">response</span>: <span class="ent">CustomerDetailDTO</span>
+        }
+        
+        <span class="const">PUT</span> <span class="str">/:id</span> {
+            <span class="attr">permissions</span>: [<span class="const">Customer.write</span>]
+            <span class="attr">body</span>: <span class="ent">CustomerUpdateDTO</span>
+        }
+        
+        <span class="const">DELETE</span> <span class="str">/:id</span> {
+            <span class="attr">permissions</span>: [<span class="const">Customer.delete</span>]
+            <span class="attr">soft-delete</span>: <span class="const">true</span>
+        }
+    }
+    
+    <span class="kw">dtos</span> {
+        <span class="ent">CustomerListDTO</span> {
+            <span class="attr">include</span>: [<span class="prop">Id</span>, <span class="prop">Name</span>, <span class="prop">Email</span>, <span class="prop">Type</span>, <span class="prop">IsActive</span>]
+        }
+        <span class="ent">CustomerDetailDTO</span> {
+            <span class="attr">include</span>: [<span class="const">*</span>]
+            <span class="attr">expand</span>: [<span class="prop">Address</span>, <span class="prop">Manager</span>]
+            <span class="attr">exclude</span>: [<span class="prop">InternalNotes</span>]
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @report -->
+<section id="report">
+    <h2>📄 @report — Tiskové sestavy</h2>
+    
+    <pre data-lang="DSL"><code><span class="dom">@report</span> <span class="ent">CustomerReport</span> {
+    <span class="kw">meta</span> {
+        <span class="attr">caption</span>: <span class="str">"Přehled zákazníků"</span>
+        <span class="attr">format</span>: [<span class="const">pdf</span>, <span class="const">xlsx</span>]
+        <span class="attr">orientation</span>: <span class="const">landscape</span>
+    }
+    
+    <span class="kw">parameters</span> {
+        <span class="prop">DateFrom</span>: <span class="ty">date</span>, <span class="attr">required</span>, <span class="fn">default</span>(<span class="const">$monthStart</span>)
+        <span class="prop">DateTo</span>: <span class="ty">date</span>, <span class="attr">required</span>, <span class="fn">default</span>(<span class="const">$today</span>)
+        <span class="prop">Type</span>: <span class="ty">CustomerType</span>, <span class="attr">optional</span>, <span class="attr">multi-select</span>
+    }
+    
+    <span class="kw">datasource</span> {
+        <span class="attr">model</span>: <span class="ent">Customer</span>
+        <span class="kw">filter</span> {
+            <span class="prop">CreatedAt</span> >= <span class="const">$DateFrom</span>
+            <span class="prop">CreatedAt</span> <= <span class="const">$DateTo</span>
+            <span class="kw">when</span> (<span class="const">$Type</span>) { <span class="prop">Type</span> <span class="kw">in</span> <span class="const">$Type</span> }
+        }
+        <span class="attr">sort</span>: [<span class="prop">Type</span> <span class="const">asc</span>, <span class="prop">Name</span> <span class="const">asc</span>]
+    }
+    
+    <span class="kw">layout</span> {
+        <span class="kw">header</span> {
+            <span class="attr">logo</span>: <span class="str">"$/assets/logo.png"</span>
+            <span class="attr">title</span>: <span class="str">"Přehled zákazníků"</span>
+            <span class="attr">subtitle</span>: <span class="str">"Období: {$DateFrom:d} - {$DateTo:d}"</span>
+        }
+        
+        <span class="kw">group</span> <span class="attr">by</span>: <span class="prop">Type</span> {
+            <span class="kw">header</span> { <span class="attr">text</span>: <span class="str">"{Type}"</span>, <span class="attr">summary</span>: <span class="str">"{count()} zákazníků"</span> }
+            
+            <span class="kw">detail</span> {
+                <span class="kw">table</span> {
+                    <span class="kw">columns</span> {
+                        <span class="prop">Name</span> { <span class="attr">width</span>: <span class="num">150</span> }
+                        <span class="prop">Email</span> { <span class="attr">width</span>: <span class="num">150</span> }
+                        <span class="prop">TotalOrders</span>: <span class="fn">sum</span>(<span class="prop">Orders.Amount</span>) { <span class="attr">format</span>: <span class="const">currency</span> }
+                    }
+                }
+            }
+        }
+        
+        <span class="kw">footer</span> {
+            <span class="attr">text</span>: <span class="str">"Strana {$page} / {$pages}"</span>
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @validation -->
+<section id="validation">
+    <h2>✅ @validation — Business pravidla</h2>
+    
+    <pre data-lang="DSL"><code><span class="dom">@validation</span> <span class="ent">OrderRules</span> {
+    <span class="kw">target</span>: <span class="ent">Order</span>
+    
+    <span class="kw">rules</span> {
+        <span class="kw">rule</span> <span class="ent">PositiveAmount</span> {
+            <span class="attr">on</span>: [<span class="const">create</span>, <span class="const">update</span>]
+            <span class="attr">check</span>: <span class="prop">Amount</span> > <span class="num">0</span>
+            <span class="attr">message</span>: <span class="str">"Částka musí být kladná"</span>
+        }
+        
+        <span class="kw">rule</span> <span class="ent">ValidDateRange</span> {
+            <span class="attr">check</span>: <span class="prop">DeliveryDate</span> >= <span class="prop">OrderDate</span>
+            <span class="attr">message</span>: <span class="str">"Datum dodání musí být po datu objednávky"</span>
+        }
+        
+        <span class="kw">rule</span> <span class="ent">CreditLimit</span> {
+            <span class="attr">check</span>: <span class="prop">Customer.CreditLimit</span> >= <span class="prop">Customer.OpenOrdersTotal</span> + <span class="prop">Amount</span>
+            <span class="attr">message</span>: <span class="str">"Překročen kreditní limit"</span>
+            <span class="attr">severity</span>: <span class="const">warning</span>
+            <span class="attr">override</span>: <span class="fn">role</span>(<span class="const">Manager</span>)
+        }
+        
+        <span class="kw">rule</span> <span class="ent">CannotEditApproved</span> {
+            <span class="attr">on</span>: [<span class="const">update</span>]
+            <span class="attr">check</span>: <span class="prop">Status</span> != <span class="const">Approved</span> <span class="kw">OR</span> <span class="const">$changes</span> <span class="kw">only</span> [<span class="prop">Note</span>]
+            <span class="attr">message</span>: <span class="str">"Schválenou objednávku nelze měnit"</span>
+        }
+    }
+    
+    <span class="kw">actions</span> {
+        <span class="kw">action</span> <span class="ent">CalculateTotal</span> {
+            <span class="attr">on</span>: [<span class="const">create</span>, <span class="const">update</span>]
+            <span class="attr">when</span>: <span class="fn">changed</span>(<span class="prop">Lines.*</span>)
+            <span class="attr">set</span>: <span class="prop">Amount</span> = <span class="fn">sum</span>(<span class="prop">Lines</span>, <span class="prop">Quantity</span> * <span class="prop">UnitPrice</span>)
+        }
+        
+        <span class="kw">action</span> <span class="ent">AssignNumber</span> {
+            <span class="attr">on</span>: [<span class="const">create</span>]
+            <span class="attr">when</span>: <span class="fn">empty</span>(<span class="prop">OrderNumber</span>)
+            <span class="attr">set</span>: <span class="prop">OrderNumber</span> = <span class="fn">sequence</span>(<span class="str">"ORD-{yyyy}-{####}"</span>)
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @locale -->
+<section id="locale">
+    <h2>🌍 @locale — Lokalizace</h2>
+    
+    <pre data-lang="DSL"><code><span class="dom">@locale</span> <span class="const">cs-CZ</span> {
+    <span class="cm">// Entity</span>
+    <span class="ent">Customer</span> {
+        <span class="attr">$caption</span>: <span class="str">"Zákazník"</span>
+        <span class="attr">$plural</span>: <span class="str">"Zákazníci"</span>
+        
+        <span class="prop">Name</span>: <span class="str">"Název"</span>
+        <span class="prop">Email</span>: <span class="str">"E-mail"</span>
+        <span class="prop">TaxId</span>: <span class="str">"IČO"</span>
+        <span class="prop">IsActive</span>: <span class="str">"Aktivní"</span>
+    }
+    
+    <span class="ty">CustomerType</span> {
+        <span class="const">Standard</span>: <span class="str">"Standardní"</span>
+        <span class="const">Premium</span>: <span class="str">"Prémiový"</span>
+        <span class="const">VIP</span>: <span class="str">"VIP"</span>
+    }
+    
+    <span class="cm">// UI texty</span>
+    <span class="kw">ui</span> {
+        <span class="kw">actions</span> {
+            <span class="prop">save</span>: <span class="str">"Uložit"</span>
+            <span class="prop">cancel</span>: <span class="str">"Zrušit"</span>
+            <span class="prop">delete</span>: <span class="str">"Smazat"</span>
+        }
+        <span class="kw">messages</span> {
+            <span class="prop">save-success</span>: <span class="str">"Záznam byl uložen"</span>
+            <span class="prop">delete-confirm</span>: <span class="str">"Opravdu smazat {0}?"</span>
+        }
+    }
+    
+    <span class="cm">// Formáty</span>
+    <span class="kw">formats</span> {
+        <span class="prop">date</span>: <span class="str">"dd.MM.yyyy"</span>
+        <span class="prop">datetime</span>: <span class="str">"dd.MM.yyyy HH:mm"</span>
+        <span class="prop">currency</span>: <span class="str">"#,##0.00 Kč"</span>
+    }
+}
+
+<span class="dom">@locale</span> <span class="const">en-US</span> {
+    <span class="ent">Customer</span> {
+        <span class="attr">$caption</span>: <span class="str">"Customer"</span>
+        <span class="prop">TaxId</span>: <span class="str">"Tax ID"</span>
+    }
+    <span class="kw">formats</span> {
+        <span class="prop">date</span>: <span class="str">"MM/dd/yyyy"</span>
+        <span class="prop">currency</span>: <span class="str">"$#,##0.00"</span>
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @audit -->
+<section id="audit">
+    <h2>📝 @audit — Change Tracking</h2>
+    
+    <pre data-lang="DSL"><code><span class="dom">@audit</span> {
+    <span class="kw">global</span> {
+        <span class="attr">enabled</span>: <span class="const">true</span>
+        <span class="attr">retention</span>: <span class="num">365</span><span class="const">d</span>
+        <span class="attr">storage</span>: <span class="ent">AuditLog</span>
+    }
+    
+    <span class="kw">entities</span> {
+        <span class="ent">Customer</span> {
+            <span class="attr">track</span>: [<span class="const">create</span>, <span class="const">update</span>, <span class="const">delete</span>]
+            <span class="attr">fields</span>: <span class="const">all</span>
+            <span class="attr">exclude</span>: [<span class="prop">LastLoginAt</span>]
+            
+            <span class="kw">field-tracking</span> {
+                <span class="prop">CreditLimit</span>: { <span class="attr">reason</span>: <span class="const">required</span> }
+                <span class="prop">IsActive</span>: { <span class="attr">notify</span>: <span class="fn">role</span>(<span class="const">Admin</span>) }
+            }
+        }
+        
+        <span class="ent">Order</span> {
+            <span class="attr">track</span>: [<span class="const">create</span>, <span class="const">update</span>, <span class="const">delete</span>, <span class="const">access</span>]
+            <span class="attr">fields</span>: [<span class="prop">Status</span>, <span class="prop">Amount</span>, <span class="prop">ApprovedBy</span>]
+        }
+        
+        <span class="ent">ImportLog</span> { <span class="attr">track</span>: <span class="const">none</span> }
+    }
+    
+    <span class="kw">security</span> {
+        <span class="attr">track</span>: [<span class="const">login</span>, <span class="const">logout</span>, <span class="const">login-failed</span>, <span class="const">permission-denied</span>]
+        <span class="attr">retention</span>: <span class="num">730</span><span class="const">d</span>
+    }
+}</code></pre>
+</section>
+
+<!-- DOMAIN: @notify -->
+<section id="notify">
+    <h2>🔔 @notify — Notifikace</h2>
+    
+    <pre data-lang="DSL"><code><span class="dom">@notify</span> {
+    <span class="kw">channels</span> {
+        <span class="kw">email</span> {
+            <span class="attr">provider</span>: <span class="const">smtp</span>
+            <span class="attr">from</span>: <span class="str">"system@company.cz"</span>
+        }
+        <span class="kw">push</span> {
+            <span class="attr">provider</span>: <span class="const">firebase</span>
+        }
+        <span class="kw">in-app</span> {
+            <span class="attr">storage</span>: <span class="ent">Notification</span>
+            <span class="attr">retention</span>: <span class="num">30</span><span class="const">d</span>
+        }
+    }
+    
+    <span class="kw">templates</span> {
+        <span class="ent">OrderApproved</span> {
+            <span class="attr">subject</span>: <span class="str">"Objednávka {Order.Number} schválena"</span>
+            <span class="attr">body</span>: <span class="fn">template</span>(<span class="str">"order-approved.html"</span>)
+            <span class="attr">channels</span>: [<span class="const">email</span>, <span class="const">in-app</span>]
+        }
+        
+        <span class="ent">TaskAssigned</span> {
+            <span class="attr">subject</span>: <span class="str">"Nový úkol: {Task.Name}"</span>
+            <span class="attr">channels</span>: [<span class="const">email</span>, <span class="const">push</span>, <span class="const">in-app</span>]
+        }
+    }
+    
+    <span class="kw">triggers</span> {
+        <span class="kw">trigger</span> <span class="ent">LowStock</span> {
+            <span class="attr">when</span>: <span class="prop">Product.Stock</span> < <span class="prop">Product.MinStock</span>
+            <span class="attr">send</span>: <span class="ent">LowStockAlert</span>
+            <span class="attr">to</span>: <span class="fn">role</span>(<span class="const">Warehouse</span>)
+            <span class="attr">throttle</span>: <span class="num">1</span><span class="const">h</span>
+        }
+        
+        <span class="kw">trigger</span> <span class="ent">PaymentOverdue</span> {
+            <span class="attr">when</span>: <span class="prop">Invoice.DueDate</span> < <span class="const">$today</span> <span class="kw">AND</span> <span class="prop">Invoice.Status</span> = <span class="const">Unpaid</span>
+            <span class="attr">schedule</span>: <span class="fn">daily</span>(<span class="str">"08:00"</span>)
+            <span class="attr">send</span>: <span class="ent">PaymentReminder</span>
+            
+            <span class="kw">escalate</span> {
+                <span class="kw">after</span>: <span class="num">7</span><span class="const">d</span> { <span class="attr">send</span>: <span class="ent">PaymentWarning</span> }
+                <span class="kw">after</span>: <span class="num">14</span><span class="const">d</span> { <span class="attr">send</span>: <span class="ent">FinalNotice</span>, <span class="attr">cc</span>: <span class="fn">role</span>(<span class="const">Finance</span>) }
+            }
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- AI INTEGRATION -->
+<section id="ai">
+    <h2>🤖 AI Integrace</h2>
+    
+    <p>
+        Singularis DSL je navržen jako ideální rozhraní pro AI generování. 
+        LLM modely dokáží syntaxi snadno pochopit a generovat.
+    </p>
+    
+    <h3>Jak AI generuje DSL?</h3>
+    
+    <div class="grid-2">
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--brand-light);">1</div>
+                <div>
+                    <div class="card-title">In-Context Learning</div>
+                    <div class="card-sub">Okamžitě funguje</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                Specifikace + příklady v system promptu. AI se naučí syntaxi z kontextu.
+            </p>
+        </div>
+        
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light);">2</div>
+                <div>
+                    <div class="card-title">RAG</div>
+                    <div class="card-sub">Škálovatelné</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                Dokumentace v vector DB, AI si vytáhne relevantní části.
+            </p>
+        </div>
+        
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--gold-light);">3</div>
+                <div>
+                    <div class="card-title">Fine-tuning</div>
+                    <div class="card-sub">Nejlepší kvalita</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                Dotrénování na tisících příkladech DSL kódu.
+            </p>
+        </div>
+        
+        <div class="card">
+            <div class="card-head">
+                <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-light);">4</div>
+                <div>
+                    <div class="card-title">JSON Schema Validace</div>
+                    <div class="card-sub">Garantovaná správnost</div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 0;">
+                Výstup validován proti schématu, retry při chybě.
+            </p>
+        </div>
+    </div>
+    
+    <h3>Proč je DSL AI-friendly?</h3>
+    
+    <div class="feat-grid">
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Konzistentní vzory</strong> — @doména Název { bloky }</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Explicitní klíčová slova</strong> — props, relations, reveal</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Podobnost s existujícími</strong> — CSS, JSON, TypeScript</span>
+        </div>
+        <div class="feat-item">
+            <span class="feat-icon">✓</span>
+            <span class="feat-text"><strong>Minimální šum</strong> — žádné zbytečné znaky</span>
+        </div>
+    </div>
+    
+    <h3>Příklad AI promptu</h3>
+    
+    <pre data-lang="Prompt"><code><span class="cm">SYSTEM:</span>
+Jsi expert na Singularis DSL 5.0. Generuj DSL podle specifikace.
+
+<span class="cm">USER:</span>
+Vytvoř CRM aplikaci s:
+- Zákazníky (jméno, email, typ: Standard/VIP)
+- Objednávkami (číslo, částka, stav)
+- Workflow schvalování pro objednávky nad 10000
+- Import zákazníků z Excelu
+- Role: Admin, Sales
+
+<span class="cm">ASSISTANT:</span>
+<span class="dom">@model</span> <span class="ent">Customer</span> { ... }
+<span class="dom">@model</span> <span class="ent">Order</span> { ... }
+<span class="dom">@workflow</span> <span class="ent">OrderApproval</span> { ... }
+<span class="dom">@import</span> <span class="ent">CustomerImport</span> { ... }
+<span class="dom">@security</span> { ... }</code></pre>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+    <h2>🗺️ Roadmap</h2>
+    
+    <div class="grid-2">
+        <div class="alert alert-ok">
+            <div class="alert-title">✅ v5.0 (Current)</div>
+            <p style="margin: 0; font-size: 13px;">
+                12 domén, kompletní specifikace syntaxe, JSON formáty
+            </p>
+        </div>
+        
+        <div class="alert alert-info">
+            <div class="alert-title">🔄 v5.1 (Q2 2026)</div>
+            <p style="margin: 0; font-size: 13px;">
+                DSL Parser, JSON Schema validace, VS Code extension
+            </p>
+        </div>
+        
+        <div class="alert alert-warn">
+            <div class="alert-title">⏳ v5.2 (Q3 2026)</div>
+            <p style="margin: 0; font-size: 13px;">
+                XPO/EF Core generator, XAFML generator, Workflow engine
+            </p>
+        </div>
+        
+        <div class="alert alert-err">
+            <div class="alert-title">🚀 v6.0 (2027)</div>
+            <p style="margin: 0; font-size: 13px;">
+                AI-first IDE, Low-code editor, Cloud runtime
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align: center; padding: 40px 20px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 40px;">
+    <p><strong>Singularis DSL 5.0</strong> — Multi-Domain Framework</p>
+    <p>Verze: 5.0 Draft | Datum: 2025-12 | Autor: Daniel Kmínek</p>
+    <p style="font-size: 13px; margin-top: 16px;">
+        🎯 "Jeden jazyk pro celou aplikaci. AI-first. Deklarativní. Validovatelný."
+    </p>
+</footer>
+
+</main>
+</div>
+
+<script>
+// Highlight active nav link on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
