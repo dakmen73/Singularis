@@ -1,0 +1,23 @@
+﻿# Build outputs
+bin/
+obj/
+
+# User/IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Secrets
+secrets.json
+*.pfx

@@ -1,0 +1,230 @@
+# Singularis Unified DSL - Pokyny a zásady
+
+## Kontext projektu
+
+### Co je Singularis
+- **Multi-domain framework** s 12 doménami: `@model`, `@ui`, `@workflow`, `@security`, `@import`, `@visual`, `@api`, `@report`, `@validation`, `@locale`, `@audit`, `@notify`
+- **SGL (ForgeCss)** - CSS-like syntax pro scaffolding a code generation
+- **Cíl**: Unifikovaný DSL pro definici domén + generování kódu
+
+### Technologický stack
+- **Pidgin** - parser combinator library (C#)
+- **Scriban** - templating engine
+- **EBNF** - formální gramatika
+- **AST** - Abstract Syntax Tree (record types v C#)
+- **.NET 8.0/10.0** - target framework
+
+### Struktura projektu
+- `C:\Singularis\SGL\` - ForgeCss projekt (parser, AST, scaffolding engine)
+- `C:\Singularis\Generator\` - Code generator z XPO modelů
+- `C:\Prace\singularis\singularis-sgl-pipeline\` - Blazor web app pro SGL
+
+---
+
+## Klíčové zásady a konvence
+
+### 1. Sjednocená syntaxe
+- **Všechny domény** používají stejnou základní strukturu: `@domain Name { sections }`
+- **Stejný formát bloků**: `{ ... }`
+- **Stejný formát deklarací**: `key: value;` nebo `key { nested }`
+- **Stejný typový systém**: `string(n)`, `decimal(p,s)`, `guid`, atd.
+- **Speciální syntaxe** (jako `->` v workflow) je uvnitř sekcí, ale parser používá stejná základní pravidla
+
+### 2. Gramatika vs Syntaxe
+- **Syntaxe** = jak to píšeme (konkrétní zápis v souboru)
+- **Gramatika** = formální pravidla pro parser (EBNF)
+- **Sjednocení** = všechny domény používají stejná základní gramatická pravidla
+
+### 3. Struktura domén
+Každá doména má:
+- `meta { ... }` - metadata (volitelné, ale doporučené)
+- `config { ... }` - konfigurace (volitelné)
+- Doménově specifické sekce (např. `props`, `relations`, `flow`, `endpoints`)
+
+### 4. Typový systém
+- Primitivní: `string(n)`, `int`, `decimal(p,s)`, `bool`, `datetime`, `guid`
+- Složené: `Type[]`, `Type?`, `Type<Param>`
+- Reference: `-> Type`, `-> Type[]`
+- Constraints: `key, auto, required, unique, range(min, max)`
+
+### 5. Vztahy (Relations)
+- Jednotný formát: `name -> target, options;`
+- Příklady: `Customer -> Customer, many-to-one, required;`
+- `Lines -> OrderLine[], one-to-many, cascade-delete;`
+
+### 6. UI struktura
+- **List view**: `@ui OrderList { type: list-view; layout { grid { ... } } }`
+- **Detail view**: `@ui OrderDetail { type: detail-view; layout { tabs { ... } } }`
+- Navigace: `row-click: navigate-detail`, `link: detail`
+- Properties: `field OrderNumber { label: "..."; format: ... }`
+
+---
+
+## Důležité soubory a dokumenty
+
+### Dokumentace
+- `SINGULARIS_UNIFIED_DSL_NAVRH.md` - hlavní návrh architektury
+- `UNIFIED_SYNTAX_PROPOSAL.md` - návrh sjednocené syntaxe pro všech 12 domén
+- `GRAMATIKA_VS_SYNTAXE.md` - vysvětlení rozdílu mezi gramatikou a syntaxí
+- `ORDER_EXAMPLE.md` - kompletní příklad s Order, OrderLine a UI
+
+### Kód
+- `C:\Singularis\SGL\gramatika.ebnf` - EBNF gramatika
+- `C:\Singularis\SGL\Ast.cs` - AST struktura (starší verze)
+- `C:\Singularis\SGL\ForgeCss.Core\Models\ast.cs` - AST struktura (nová verze)
+- `C:\Singularis\SGL\parser.cs` - částečná implementace parseru
+- `C:\Singularis\SGL\Scaffolding.cs` - scaffolding engine
+
+---
+
+## Pravidla pro práci s kódem
+
+### 1. Zákaz mazání kódu
+- **NIKDY nemazat kód bez dovolení** (explicitní pravidlo uživatele)
+- Před mazáním vždy konzultovat s uživatelem
+
+### 2. Formátování kódu
+- Používat konzistentní formátování
+- Respektovat existující konvence v projektu
+- Pro C#: používat moderní C# syntax (records, pattern matching)
+
+### 3. Dokumentace
+- Důležité změny dokumentovat
+- Příklady kódu doplňovat komentáři
+- EBNF gramatiku aktualizovat při změnách syntaxe
+
+### 4. Testování
+- Při implementaci parseru vytvářet unit testy
+- Testovat všechny domény
+- Testovat edge cases
+
+---
+
+## Architektonické principy
+
+### 1. Dual Purpose Design
+- DSL slouží jak pro **definici domén** (@model, @ui, ...)
+- Tak pro **generování kódu** (scaffolding, SGL syntaxe)
+
+### 2. Extensibility
+- Snadné přidání nové domény = přidání do `domain_name` v EBNF
+- Každá doména má svůj parser, ale používá stejnou základní strukturu
+
+### 3. Type Safety
+- AST používá record types (immutable)
+- Pattern matching pro různé typy uzlů
+- Silná typová kontrola
+
+### 4. Separation of Concerns
+- **Parser** - převod textu na AST
+- **Domain Compilers** - kompilace domén do JSON/struktur
+- **Scaffolding Engine** - vykonávání scaffolding příkazů
+- **Code Generators** - generování kódu z kompilovaných domén
+
+---
+
+## Pipeline zpracování
+
+```
+FCSS/SGL soubor
+    ↓
+[Pidgin Parser] → AST
+    ↓
+[Domain Compiler] → JSON Schema / Struktury
+    ↓
+[Scaffolding Engine] → File Operations
+    ↓
+[Scriban Templates] → Generated Files
+```
+
+---
+
+## Příklady syntaxe
+
+### Model
+```singularis
+@model Order {
+    meta { table: "Orders"; }
+    props {
+        Id: guid, key, auto;
+        OrderNumber: string(50), required, unique;
+    }
+    relations {
+        Customer -> Customer, many-to-one, required;
+    }
+}
+```
+
+### UI List
+```singularis
+@ui OrderList {
+    meta { type: list-view; }
+    config { model: Order; }
+    layout {
+        grid {
+            row-click: navigate-detail;
+            columns {
+                OrderNumber { width: 150; link: detail; }
+            }
+        }
+    }
+}
+```
+
+### UI Detail
+```singularis
+@ui OrderDetail {
+    meta { type: detail-view; }
+    layout {
+        tabs {
+            tab General {
+                sections {
+                    section BasicInfo {
+                        fields {
+                            field OrderNumber { label: "Číslo"; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+---
+
+## Poznámky k implementaci
+
+### Aktuální stav
+- Parser je částečně implementován v `parser.cs`
+- AST struktura existuje v `ForgeCss.Core/Models/ast.cs`
+- Scaffolding engine existuje, ale neúplný
+- Scriban integrace zmíněna, ale neimplementována
+
+### Co chybí
+1. Dokončení parseru pro všechny domény
+2. Domain compilers pro všech 12 domén
+3. Propojení domain outputs → scaffolding
+4. Rozšířená EBNF implementace
+5. Testy
+
+### Priorita implementace
+1. Core parser infrastructure
+2. @model a @ui compilers (MVP)
+3. Scaffolding integration
+4. Ostatní domény postupně
+
+---
+
+## Důležité poznámky
+
+- Projekt je v aktivním vývoji
+- Syntaxe se může měnit, ale základní principy zůstávají
+- Vždy respektovat zpětnou kompatibilitu, pokud je to možné
+- Při návrhu nových funkcí zvažovat dopad na všechny domény
+
+
+
+
+
+
