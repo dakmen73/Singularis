@@ -1,0 +1,64 @@
+@page "/singularis"
+@using System.Text
+
+<PageTitle>Singularis</PageTitle>
+
+<h1>Singularis</h1>
+
+<div class="mb-3">
+    <label class="form-label">Nahraj soubor do editoru (SglCss)</label>
+    <InputFile OnChange="OnFileChangeAsync" class="form-control" />
+    @if (!string.IsNullOrWhiteSpace(_loadedFileName))
+    {
+        <div class="form-text">Načteno: <strong>@_loadedFileName</strong></div>
+    }
+    @if (!string.IsNullOrWhiteSpace(_error))
+    {
+        <div class="text-danger mt-2">@_error</div>
+    }
+</div>
+
+<div class="mb-3">
+    <label class="form-label">SglCss (DSL)</label>
+    <textarea class="form-control font-monospace" rows="18" @bind="_dslText"></textarea>
+</div>
+
+@code {
+    private const long MaxUploadBytes = 10 * 1024 * 1024; // 10 MB
+
+    private string _dslText = string.Empty;
+    private string? _loadedFileName;
+    private string? _error;
+
+    private async Task OnFileChangeAsync(InputFileChangeEventArgs e)
+    {
+        _error = null;
+        _loadedFileName = null;
+
+        var file = e.File;
+        if (file is null)
+        {
+            _error = "Nebyl vybrán žádný soubor.";
+            return;
+        }
+
+        _loadedFileName = file.Name;
+
+        try
+        {
+            await using var stream = file.OpenReadStream(MaxUploadBytes);
+            using var reader = new StreamReader(stream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true);
+            _dslText = await reader.ReadToEndAsync();
+        }
+        catch (IOException ex)
+        {
+            _error = $"Soubor se nepodařilo načíst: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            _error = $"Chyba při načítání souboru: {ex.Message}";
+        }
+    }
+}
+
+
